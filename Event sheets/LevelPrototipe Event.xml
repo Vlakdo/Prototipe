@@ -528,7 +528,7 @@
                                                     <actions>
                                                         <action id="0" name="Call function" sid="4603480756366254" type="Function">
                                                             <param id="0" name="Name">&quot;RunMovement&quot;</param>
-                                                            <param id="1" name="Parameter {n}">Creatures.UID{###}int(random(480, 900))</param>
+                                                            <param id="1" name="Parameter {n}">Creatures.UID{###}int(random(550, 900))</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -1164,6 +1164,25 @@
                                             </conditions>
                                             <actions />
                                             <sub-events>
+                                                <event-block sid="305148885423926">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="3136781095292938" type="captureItemPoint">
+                                                            <param id="0" name="Instance variable">idItemAssig</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">EnvironmentObjects.UID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="7184149739851976" type="captureItemPoint">
+                                                            <param id="0" name="Instance variable">idItemAssig</param>
+                                                            <param id="1" name="Value">-1</param>
+                                                        </action>
+                                                        <action id="-13" name="Set boolean" sid="2102364241122524" type="captureItemPoint">
+                                                            <param id="0" name="Instance variable">isFree</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
                                                 <event-block sid="5076422687548576">
                                                     <conditions />
                                                     <actions>
@@ -1315,27 +1334,20 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action behavior="Physics" id="27" name="Set enabled" sid="2493642380161867" type="platform">
-                                            <param id="0" name="Mode">0</param>
-                                        </action>
-                                        <action behavior="Physics" id="27" name="Set enabled" sid="9733003279221044" type="EnvironmentObjects">
-                                            <param id="0" name="Mode">0</param>
+                                        <action behavior="Physics" id="15" name="Set velocity" sid="8330814914571951" type="EnvironmentObjects">
+                                            <param id="0" name="X component">0</param>
+                                            <param id="1" name="Y component">0</param>
                                         </action>
                                         <action id="-13" name="Set boolean" sid="1505349152738138" type="EnvironmentObjects">
                                             <param id="0" name="Instance variable">isEnable</param>
                                             <param id="1" name="Value">0</param>
                                         </action>
-                                        <action id="-10" name="Set value" sid="4823043223857464" type="Creatures">
-                                            <param id="0" name="Instance variable">state</param>
-                                            <param id="1" name="Value">&quot;SeeEnd&quot;</param>
+                                        <action id="-16" name="Wait" sid="9768072177828038" type="System">
+                                            <param id="0" name="Seconds">1.0</param>
                                         </action>
-                                        <action id="-10" name="Set value" sid="3924481966610437" type="Creatures">
-                                            <param id="0" name="Instance variable">action</param>
-                                            <param id="1" name="Value">&quot;SeeEnd&quot;</param>
-                                        </action>
-                                        <action id="0" name="Call function" sid="6188420353996223" type="Function">
-                                            <param id="0" name="Name">&quot;RunMovement&quot;</param>
-                                            <param id="1" name="Parameter {n}">Creatures.UID{###}EnvironmentObjects.X</param>
+                                        <action id="0" name="Call function" sid="7149337446717615" type="Function">
+                                            <param id="0" name="Name">&quot;StopItem&quot;</param>
+                                            <param id="1" name="Parameter {n}">Creatures.UID{###}EnvironmentObjects.UID</param>
                                         </action>
                                     </actions>
                                     <sub-events>
@@ -1352,6 +1364,53 @@
                                             </actions>
                                         </event-block>
                                     </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="2258403262826837">
+                    <conditions>
+                        <condition id="0" name="On function" sid="8312773855358897" type="Function">
+                            <param id="0" name="Name">&quot;StopItem&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9306710771586109">
+                            <conditions>
+                                <condition id="-14" name="Pick by unique ID" sid="5123323926348378" type="Creatures">
+                                    <param id="0" name="Unique ID">Function.Param(0)</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="5783495873156849">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="5692426702417125" type="EnvironmentObjects">
+                                            <param id="0" name="Unique ID">Function.Param(1)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-10" name="Set value" sid="4823043223857464" type="Creatures">
+                                            <param id="0" name="Instance variable">state</param>
+                                            <param id="1" name="Value">&quot;SeeEnd&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="3924481966610437" type="Creatures">
+                                            <param id="0" name="Instance variable">action</param>
+                                            <param id="1" name="Value">&quot;SeeEnd&quot;</param>
+                                        </action>
+                                        <action behavior="Physics" id="27" name="Set enabled" sid="2493642380161867" type="platform">
+                                            <param id="0" name="Mode">0</param>
+                                        </action>
+                                        <action behavior="Physics" id="27" name="Set enabled" sid="9733003279221044" type="EnvironmentObjects">
+                                            <param id="0" name="Mode">0</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="6188420353996223" type="Function">
+                                            <param id="0" name="Name">&quot;RunMovement&quot;</param>
+                                            <param id="1" name="Parameter {n}">Creatures.UID{###}EnvironmentObjects.X</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -2338,6 +2397,10 @@
                                                     <param id="0" name="Instance variable">action</param>
                                                     <param id="1" name="Value">&quot;CaptureObject&quot;</param>
                                                 </action>
+                                                <action id="-10" name="Set value" sid="5243257482254473" type="Creatures">
+                                                    <param id="0" name="Instance variable">distanceMovePoint</param>
+                                                    <param id="1" name="Value">0</param>
+                                                </action>
                                                 <action id="-10" name="Set value" sid="1368481104375282" type="Creatures">
                                                     <param id="0" name="Instance variable">idObjectCapture</param>
                                                     <param id="1" name="Value">EnvironmentObjects.UID</param>
@@ -2354,6 +2417,9 @@
                                                 <action id="-3" name="Set position" sid="8383719041263155" type="Ling">
                                                     <param id="0" name="X">EnvironmentObjects.X</param>
                                                     <param id="1" name="Y">EnvironmentObjects.Y</param>
+                                                </action>
+                                                <action id="-26" name="Move to layer" sid="7176762540838098" type="EnvironmentObjects">
+                                                    <param id="0" name="Layer">&quot;FrontComponentsLevel&quot;</param>
                                                 </action>
                                                 <action behavior="CustomMovement" id="12" name="Set enabled" sid="2728627138279294" type="EnvironmentObjects">
                                                     <param id="0" name="State">1</param>
@@ -2409,6 +2475,10 @@
                                                             <param id="0" name="Instance variable">isFree</param>
                                                             <param id="1" name="Value">0</param>
                                                         </action>
+                                                        <action id="-10" name="Set value" sid="5669227015427436" type="captureItemPoint">
+                                                            <param id="0" name="Instance variable">idItemAssig</param>
+                                                            <param id="1" name="Value">EnvironmentObjects.UID</param>
+                                                        </action>
                                                         <action id="-26" name="Move to layer" sid="3967860379865033" type="EnvironmentObjects">
                                                             <param id="0" name="Layer">&quot;HUD&quot;</param>
                                                         </action>
@@ -2416,6 +2486,7 @@
                                                             <param id="0" name="X">captureItemPoint.X</param>
                                                             <param id="1" name="Y">captureItemPoint.Y</param>
                                                         </action>
+                                                        <action id="-24" name="Stop loop" sid="8773100740138405" type="System" />
                                                     </actions>
                                                 </event-block>
                                             </sub-events>
@@ -2496,7 +2567,7 @@
                                                     <param id="0" name="X">0</param>
                                                     <param id="1" name="Y">-500</param>
                                                 </action>
-                                                <action disabled="1" id="-3" name="Set position" sid="3804089594171049" type="EnvironmentObjects">
+                                                <action id="-3" name="Set position" sid="3804089594171049" type="EnvironmentObjects">
                                                     <param id="0" name="X">0</param>
                                                     <param id="1" name="Y">-500</param>
                                                 </action>
@@ -2549,6 +2620,27 @@
                             <actions>
                                 <action id="-15" name="Set visible" sid="4051388487115356" type="SeeLine">
                                     <param id="0" name="Visibility">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5101629962613364">
+                    <conditions>
+                        <condition id="0" name="On key pressed" sid="1389295235322991" type="Keyboard">
+                            <param id="0" name="Key">67 (C)</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1993255611179405">
+                            <conditions />
+                            <actions>
+                                <action behavior="ScrollTo" id="1" name="Set enabled" sid="8203171796703777" type="HeroSprite">
+                                    <param id="0" name="State">0</param>
+                                </action>
+                                <action behavior="ScrollTo" id="1" name="Set enabled" sid="4427153734874707" type="Monster1">
+                                    <param id="0" name="State">1</param>
                                 </action>
                             </actions>
                         </event-block>

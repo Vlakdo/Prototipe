@@ -25,8 +25,10 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
-        <folder expanded="0" path="object-folder/Temporal/" />
+        <folder expanded="1" path="object-folder/Temporal/" />
         <folder expanded="1" path="object-folder/LevelComponents/" />
+        <folder expanded="1" path="object-folder/LevelComponents/Interactives/" />
+        <folder expanded="1" path="object-folder/LevelComponents/NoInteractives/" />
         <folder expanded="1" path="object-folder/InterfaceIcons/" />
         <folder expanded="0" path="object-folder/Mechanics/" />
         <folder expanded="1" path="layout-folder/" />
@@ -36,14 +38,18 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="music-folder/" />
         <folder expanded="0" path="file-folder/Icons/" />
         <folder expanded="1" path="animation-folder/Reference/" />
-        <folder expanded="1" path="animation-folder/Box/" />
         <folder expanded="1" path="animation-folder/BgFront/" />
-        <folder expanded="1" path="animation-folder/platform/" />
-        <folder expanded="1" path="animation-folder/DoorMarco/" />
-        <folder expanded="1" path="animation-folder/Door/" />
-        <folder expanded="1" path="animation-folder/Closet/" />
-        <folder expanded="1" path="animation-folder/Barril/" />
         <folder expanded="1" path="animation-folder/Ball/" />
+        <folder expanded="1" path="animation-folder/Barril/" />
+        <folder expanded="1" path="animation-folder/Book1/" />
+        <folder expanded="1" path="animation-folder/Closet/" />
+        <folder expanded="1" path="animation-folder/Door/" />
+        <folder expanded="1" path="animation-folder/DoorMarco/" />
+        <folder expanded="1" path="animation-folder/platform/" />
+        <folder expanded="1" path="animation-folder/Book2/" />
+        <folder expanded="1" path="animation-folder/Book3/" />
+        <folder expanded="1" path="animation-folder/Item1/" />
+        <folder expanded="1" path="animation-folder/Box/" />
         <folder expanded="1" path="animation-folder/BubbleBg/" />
         <folder expanded="1" path="animation-folder/IconsBubble/" />
         <folder expanded="1" path="animation-folder/captureItemPoint/" />

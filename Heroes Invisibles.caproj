@@ -60,15 +60,7 @@
                 <plugin id="Sprite" />
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2483625113988536" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES\02 ARTE PARA REVISAR\Junio_17\HI_nivel_02.png" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="Box" sid="1766092644591361">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4844197696665302" speed="5">
-                        <frame duration="1" hotspotX="0.513514" hotspotY="0.514286" original-source="\\VBOXSVR\WorkingVb\Box.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_fondo.png" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -92,115 +84,159 @@
             </object-type>
         </object-folder>
         <object-folder name="LevelComponents">
-            <object-type name="platform" sid="6822964977052413">
-                <plugin id="Sprite" />
-                <behaviors>
-                    <behavior-type name="Solid" sid="3378454838393942">
-                        <behavior id="solid" />
-                    </behavior-type>
-                    <behavior-type name="Physics" sid="6924507034540352">
-                        <behavior id="Physics" />
-                    </behavior-type>
-                </behaviors>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2698024473944345" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES\01 ARTE APROBADO\ESCENARIO\piso_small.png" />
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="DoorMarco" sid="9636453417530596">
-                <plugin id="Sprite" />
-                <instance-variables>
-                    <instance-variable name="idExitDoor" sid="6672951154241283" type="number" />
-                    <instance-variable name="groundLevel" sid="2864943313340421" type="number" />
-                </instance-variables>
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8522458496873914" speed="5">
-                        <frame duration="1" hotspotX="0.511111" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES\01 ARTE APROBADO\ESCENARIO\HI_puerta_marco.png">
-                            <image-point name="BubblePosition" x="0.511111" y="-0.135135" />
-                            <image-point name="Exit" x="1.08889" y="0.5" />
-                            <image-point name="Enter" x="0.5" y="0.5" />
-                            <collision-poly>
-                                <point x="0.0111111" y="0.00675676" />
-                                <point x="0.966667" y="0.0202703" />
-                                <point x="0.944444" y="1" />
-                                <point x="0.111111" y="1" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="Door" sid="8395178346028998">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8123730906301914" speed="5">
-                        <frame duration="1" hotspotX="0.507692" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES\01 ARTE APROBADO\ESCENARIO\HI_puerta_puerta_1.png">
-                            <collision-poly>
-                                <point x="0.0111111" y="0.00675676" />
-                                <point x="0.966667" y="0.0202703" />
-                                <point x="0.944444" y="1" />
-                                <point x="0.111111" y="1" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="Closet" sid="1834317328081452">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2810343180392556" speed="5">
-                        <frame duration="1" hotspotX="0.484536" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES\01 ARTE APROBADO\ESCENARIO\HI_puerta_marco.png">
-                            <image-point name="BubblePosition" x="0.484536" y="-0.135135" />
-                            <image-point name="Exit" x="-0.309278" y="0.5" />
-                            <image-point name="Enter" x="0.505155" y="0.5" />
-                            <collision-poly>
-                                <point x="0.888889" y="1" />
-                                <point x="0.055556" y="1" />
-                                <point x="0.033333" y="0.0202703" />
-                                <point x="0.988889" y="0.00675676" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="Barril" sid="8865292621604339">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3824439196866839" speed="5">
-                        <frame duration="1" hotspotX="0.490566" hotspotY="0.506024" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES\01 ARTE APROBADO\ESCENARIO\HI_puerta_marco.png">
-                            <image-point name="BubblePosition" x="0.490566" y="-0.180723" />
-                            <image-point name="Exit" x="-0.471698" y="0.506024" />
-                            <image-point name="Enter" x="0.509434" y="0.506024" />
-                            <collision-poly>
-                                <point x="0.888889" y="1" />
-                                <point x="0.055556" y="1" />
-                                <point x="0.033333" y="0.0202703" />
-                                <point x="0.988889" y="0.00675676" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                </animation-folder>
-            </object-type>
-            <object-type name="Ball" sid="4385687194619107">
-                <plugin id="Sprite" />
-                <animation-folder>
-                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="244079262393505" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\Ball.png">
-                            <image-point name="BubblePosition" x="0.5" y="-2.5" />
-                            <collision-poly>
-                                <point x="0.146465" y="0.146465" />
-                                <point x="0.5" y="0" />
-                                <point x="0.853535" y="0.146465" />
-                                <point x="1" y="0.5" />
-                                <point x="0.853535" y="0.853535" />
-                                <point x="0.5" y="1" />
-                                <point x="0.146465" y="0.853535" />
-                                <point x="0" y="0.5" />
-                            </collision-poly>
-                        </frame>
-                    </animation>
-                </animation-folder>
-            </object-type>
+            <object-folder name="Interactives">
+                <object-type name="Ball" sid="4385687194619107">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="244079262393505" speed="5">
+                            <frame duration="1" hotspotX="0.517241" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_props_balon_1.png">
+                                <image-point name="BubblePosition" x="0.517241" y="-2.3" />
+                                <collision-poly>
+                                    <point x="0.122083" y="0.170034" />
+                                    <point x="0.5" y="0.0333333" />
+                                    <point x="0.877917" y="0.170034" />
+                                    <point x="1" y="0.5" />
+                                    <point x="0.877917" y="0.829966" />
+                                    <point x="0.5" y="0.966667" />
+                                    <point x="0.122083" y="0.829966" />
+                                    <point x="0" y="0.5" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Barril" sid="8865292621604339">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3824439196866839" speed="5">
+                            <frame duration="1" hotspotX="0.493151" hotspotY="0.505882" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\barril.png">
+                                <image-point name="BubblePosition" x="0.493151" y="-0.176471" />
+                                <image-point name="Exit" x="-0.465753" y="0.505882" />
+                                <image-point name="Enter" x="0.506849" y="0.505882" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Book1" sid="5049535358340743">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7454227748481383" speed="5">
+                            <frame duration="1" hotspotX="0.511628" hotspotY="0.508772" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_libro_ciencia.png">
+                                <image-point name="BubblePosition" x="0.511628" y="-0.701754" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Closet" sid="1834317328081452">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2810343180392556" speed="5">
+                            <frame duration="1" hotspotX="0.479592" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_props_armario.png">
+                                <image-point name="BubblePosition" x="0.479592" y="-0.132353" />
+                                <image-point name="Exit" x="-0.306122" y="0.5" />
+                                <image-point name="Enter" x="0.510204" y="0.5" />
+                                <collision-poly>
+                                    <point x="0.888889" y="1" />
+                                    <point x="0.055556" y="1" />
+                                    <point x="0.033333" y="0.0202703" />
+                                    <point x="0.988889" y="0.00675676" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Door" sid="8395178346028998">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8123730906301914" speed="5">
+                            <frame duration="1" hotspotX="0.507692" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES\01 ARTE APROBADO\ESCENARIO\HI_puerta_puerta_1.png">
+                                <collision-poly>
+                                    <point x="0.0111111" y="0.00675676" />
+                                    <point x="0.966667" y="0.0202703" />
+                                    <point x="0.944444" y="1" />
+                                    <point x="0.111111" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="DoorMarco" sid="9636453417530596">
+                    <plugin id="Sprite" />
+                    <instance-variables>
+                        <instance-variable name="idExitDoor" sid="6672951154241283" type="number" />
+                        <instance-variable name="groundLevel" sid="2864943313340421" type="number" />
+                    </instance-variables>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8522458496873914" speed="5">
+                            <frame duration="1" hotspotX="0.511111" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES\01 ARTE APROBADO\ESCENARIO\HI_puerta_marco.png">
+                                <image-point name="BubblePosition" x="0.511111" y="-0.135135" />
+                                <image-point name="Exit" x="1.08889" y="0.5" />
+                                <image-point name="Enter" x="0.5" y="0.5" />
+                                <collision-poly>
+                                    <point x="0.0111111" y="0.00675676" />
+                                    <point x="0.966667" y="0.0202703" />
+                                    <point x="0.944444" y="1" />
+                                    <point x="0.111111" y="1" />
+                                </collision-poly>
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="platform" sid="6822964977052413">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Solid" sid="3378454838393942">
+                            <behavior id="solid" />
+                        </behavior-type>
+                        <behavior-type name="Physics" sid="6924507034540352">
+                            <behavior id="Physics" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2698024473944345" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES\01 ARTE APROBADO\ESCENARIO\piso_small.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Book2" sid="8098519323408096">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="624304200557564" speed="5">
+                            <frame duration="1" hotspotX="0.511628" hotspotY="0.508772" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_libro_math.png">
+                                <image-point name="BubblePosition" x="0.511628" y="-0.701754" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Book3" sid="702442530636297">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6802878706665157" speed="5">
+                            <frame duration="1" hotspotX="0.511628" hotspotY="0.508772" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_libro_geofrafia.png">
+                                <image-point name="BubblePosition" x="0.511628" y="-0.701754" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
+            <object-folder name="NoInteractives">
+                <object-type name="Item1" sid="1022297268422823">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7778398519102177" speed="5">
+                            <frame duration="1" hotspotX="0.511111" hotspotY="0.507463" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_props_almanaque.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Box" sid="1766092644591361">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4844197696665302" speed="5">
+                            <frame duration="1" hotspotX="0.506849" hotspotY="0.516129" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_props_box_2.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+            </object-folder>
         </object-folder>
         <object-folder name="InterfaceIcons">
             <object-type name="BubbleBg" sid="7141156040100713">
@@ -250,6 +286,7 @@
                 <instance-variables>
                     <instance-variable name="index" sid="5944121066492336" type="number" />
                     <instance-variable name="isFree" sid="1627368874866024" type="boolean" />
+                    <instance-variable name="idItemAssig" sid="1047644484129821" type="number" />
                 </instance-variables>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9014666092015706" speed="5">
@@ -426,6 +463,9 @@
             <members>
                 <member>Ball</member>
                 <member>Barril</member>
+                <member>Book1</member>
+                <member>Book2</member>
+                <member>Book3</member>
                 <member>Closet</member>
                 <member>DoorMarco</member>
             </members>
