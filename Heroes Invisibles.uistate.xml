@@ -25,11 +25,11 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
-        <folder expanded="1" path="object-folder/Temporal/" />
+        <folder expanded="0" path="object-folder/Temporal/" />
         <folder expanded="1" path="object-folder/LevelComponents/" />
         <folder expanded="1" path="object-folder/LevelComponents/Interactives/" />
         <folder expanded="1" path="object-folder/LevelComponents/NoInteractives/" />
-        <folder expanded="1" path="object-folder/InterfaceIcons/" />
+        <folder expanded="0" path="object-folder/InterfaceIcons/" />
         <folder expanded="0" path="object-folder/Mechanics/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
@@ -48,8 +48,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/platform/" />
         <folder expanded="1" path="animation-folder/Book2/" />
         <folder expanded="1" path="animation-folder/Book3/" />
+        <folder expanded="1" path="animation-folder/Padlock1/" />
+        <folder expanded="1" path="animation-folder/Padlock2/" />
+        <folder expanded="1" path="animation-folder/Padlock3/" />
         <folder expanded="1" path="animation-folder/Item1/" />
         <folder expanded="1" path="animation-folder/Box/" />
+        <folder expanded="1" path="animation-folder/Cague/" />
         <folder expanded="1" path="animation-folder/BubbleBg/" />
         <folder expanded="1" path="animation-folder/IconsBubble/" />
         <folder expanded="1" path="animation-folder/captureItemPoint/" />

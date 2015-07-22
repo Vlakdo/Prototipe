@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>LevelPrototipe Event</name>
     <events>
+        <variable constant="0" name="PadlockOpenCount" sid="779184448876331" static="0" type="number">0</variable>
         <variable constant="0" name="gameState" sid="7716998056900676" static="0" type="text">none</variable>
         <event-group description="" sid="3025546299924314" title="Start Level">
             <sub-events>
@@ -18,6 +19,10 @@
                                 <action id="-9" name="Set value" sid="8073481391221089" type="System">
                                     <param id="0" name="Variable">gameState</param>
                                     <param id="1" name="Value">&quot;none&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="5204279298470974" type="System">
+                                    <param id="0" name="Variable">PadlockOpenCount</param>
+                                    <param id="1" name="Value">0</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="9042740118618861" type="BubbleBg">
                                     <param id="0" name="Instance variable">state</param>
@@ -528,7 +533,7 @@
                                                     <actions>
                                                         <action id="0" name="Call function" sid="4603480756366254" type="Function">
                                                             <param id="0" name="Name">&quot;RunMovement&quot;</param>
-                                                            <param id="1" name="Parameter {n}">Creatures.UID{###}int(random(550, 900))</param>
+                                                            <param id="1" name="Parameter {n}">Creatures.UID{###}int(random(550, 840))</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -1112,6 +1117,28 @@
                                         </event-block>
                                     </sub-events>
                                 </event-block>
+                                <event-block sid="9041108652651645">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="5502701490302035" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="1659408828283112" type="EnvironmentObjects">
+                                            <param id="0" name="Instance variable">objectClass</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Padlock&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="4285354532195227">
+                                            <conditions />
+                                            <actions>
+                                                <action id="0" name="Call function" sid="2399159790222253" type="Function">
+                                                    <param id="0" name="Name">&quot;OpenPadlock&quot;</param>
+                                                    <param id="1" name="Parameter {n}">EnvironmentObjects.UID{###}Function.Param(1)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
                                 <event-block disabled="1" sid="1395127568250711">
                                     <conditions>
                                         <condition id="-22" name="Else" sid="5818480357792247" type="System" />
@@ -1146,23 +1173,29 @@
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="7435157516001962">
+                                <event-block sid="1366847984614287">
                                     <conditions>
-                                        <condition id="-14" name="Pick by unique ID" sid="3392268520578733" type="EnvironmentObjects">
-                                            <param id="0" name="Unique ID">HeroSprite.idObjectCapture</param>
+                                        <condition id="5" name="Contains value" sid="2151354654740457" type="ArrayItems">
+                                            <param id="0" name="Value">Creatures.nameObjectRequires</param>
                                         </condition>
                                     </conditions>
                                     <actions />
                                     <sub-events>
-                                        <event-block sid="1366847984614287">
+                                        <variable constant="0" name="indexArrayDelete" sid="1018662341733405" static="0" type="number">0</variable>
+                                        <event-block sid="6548497322010388">
                                             <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="2151354654740457" type="Creatures">
-                                                    <param id="0" name="Instance variable">nameObjectRequires</param>
+                                                <condition id="-7" name="Compare instance variable" sid="3392268520578733" type="EnvironmentObjects">
+                                                    <param id="0" name="Instance variable">nameObject</param>
                                                     <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">EnvironmentObjects.nameObject</param>
+                                                    <param id="2" name="Value">Creatures.nameObjectRequires</param>
                                                 </condition>
                                             </conditions>
-                                            <actions />
+                                            <actions>
+                                                <action id="-9" name="Set value" sid="5323149946434458" type="System">
+                                                    <param id="0" name="Variable">indexArrayDelete</param>
+                                                    <param id="1" name="Value">ArrayItems.CurX</param>
+                                                </action>
+                                            </actions>
                                             <sub-events>
                                                 <event-block sid="305148885423926">
                                                     <conditions>
@@ -1186,6 +1219,10 @@
                                                 <event-block sid="5076422687548576">
                                                     <conditions />
                                                     <actions>
+                                                        <action id="9" name="Delete" sid="6777090077327301" type="ArrayItems">
+                                                            <param id="0" name="Index">indexArrayDelete</param>
+                                                            <param id="1" name="Axis">0</param>
+                                                        </action>
                                                         <action id="-26" name="Move to layer" sid="7943769738704846" type="EnvironmentObjects">
                                                             <param id="0" name="Layer">&quot;CenterComponentsLevel&quot;</param>
                                                         </action>
@@ -1203,8 +1240,8 @@
                                                             <param id="0" name="Mode">1</param>
                                                         </action>
                                                         <action behavior="Physics" id="15" name="Set velocity" sid="1079097847941434" type="EnvironmentObjects">
-                                                            <param id="0" name="X component">150</param>
-                                                            <param id="1" name="Y component">-150</param>
+                                                            <param id="0" name="X component">100</param>
+                                                            <param id="1" name="Y component">-100</param>
                                                         </action>
                                                         <action id="-16" name="Wait" sid="8806992567800634" type="System">
                                                             <param id="0" name="Seconds">2.0</param>
@@ -1217,43 +1254,160 @@
                                                 </event-block>
                                             </sub-events>
                                         </event-block>
-                                        <event-block sid="9649820223716445">
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="9649820223716445">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="1719440896324388" type="System" />
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="4693464219214848">
+                                            <conditions />
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="1873496266913059" type="HeroSprite">
+                                                    <param id="0" name="Instance variable">state</param>
+                                                    <param id="1" name="Value">&quot;Idle&quot;</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="564269911427261" type="Function">
+                                                    <param id="0" name="Name">&quot;RunMovement&quot;</param>
+                                                    <param id="1" name="Parameter {n}">HeroSprite.UID{###}249</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="94849897038817" type="Creatures">
+                                                    <param id="0" name="Instance variable">state</param>
+                                                    <param id="1" name="Value">&quot;Fury&quot;</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="3053091634076998" type="Function">
+                                                    <param id="0" name="Name">&quot;RunMovement&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Creatures.UID{###}600</param>
+                                                </action>
+                                                <action behavior="Platform" id="7" name="Simulate control" sid="421045610114294" type="Creatures">
+                                                    <param id="0" name="Control">2</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="4682951439960733" type="BubbleBg">
+                                                    <param id="0" name="Instance variable">state</param>
+                                                    <param id="1" name="Value">&quot;Close&quot;</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="1081915709615376" type="BubbleBg">
+                                                    <param id="0" name="Instance variable">idObjectAsigned</param>
+                                                    <param id="1" name="Value">-1</param>
+                                                </action>
+                                                <action id="-3" name="Set position" sid="9251045983393215" type="BubbleBg">
+                                                    <param id="0" name="X">-104</param>
+                                                    <param id="1" name="Y">48</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block disabled="1" sid="4310808176485216">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="5022446632481072" type="EnvironmentObjects">
+                                            <param id="0" name="Unique ID">HeroSprite.idObjectCapture</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block disabled="1" sid="1208759240944723">
                                             <conditions>
-                                                <condition id="-22" name="Else" sid="1719440896324388" type="System" />
+                                                <condition id="-7" name="Compare instance variable" sid="4537105137935227" type="Creatures">
+                                                    <param id="0" name="Instance variable">nameObjectRequires</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">EnvironmentObjects.nameObject</param>
+                                                </condition>
                                             </conditions>
                                             <actions />
                                             <sub-events>
-                                                <event-block sid="4693464219214848">
+                                                <event-block disabled="1" sid="7771877197510343">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="3174437241782301" type="captureItemPoint">
+                                                            <param id="0" name="Instance variable">idItemAssig</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">EnvironmentObjects.UID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="2981110340456968" type="captureItemPoint">
+                                                            <param id="0" name="Instance variable">idItemAssig</param>
+                                                            <param id="1" name="Value">-1</param>
+                                                        </action>
+                                                        <action id="-13" name="Set boolean" sid="3331781373324918" type="captureItemPoint">
+                                                            <param id="0" name="Instance variable">isFree</param>
+                                                            <param id="1" name="Value">1</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block disabled="1" sid="4986418260631208">
                                                     <conditions />
                                                     <actions>
-                                                        <action id="-10" name="Set value" sid="1873496266913059" type="HeroSprite">
+                                                        <action id="-26" name="Move to layer" sid="491880930426077" type="EnvironmentObjects">
+                                                            <param id="0" name="Layer">&quot;CenterComponentsLevel&quot;</param>
+                                                        </action>
+                                                        <action id="-3" name="Set position" sid="504050284648879" type="EnvironmentObjects">
+                                                            <param id="0" name="X">HeroSprite.X</param>
+                                                            <param id="1" name="Y">HeroSprite.Y</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="7139762281788749" type="System">
+                                                            <param id="0" name="Seconds">1.0</param>
+                                                        </action>
+                                                        <action behavior="Physics" id="27" name="Set enabled" sid="6353008664727147" type="platform">
+                                                            <param id="0" name="Mode">1</param>
+                                                        </action>
+                                                        <action behavior="Physics" id="27" name="Set enabled" sid="4075102024537272" type="EnvironmentObjects">
+                                                            <param id="0" name="Mode">1</param>
+                                                        </action>
+                                                        <action behavior="Physics" id="15" name="Set velocity" sid="3412673195222112" type="EnvironmentObjects">
+                                                            <param id="0" name="X component">150</param>
+                                                            <param id="1" name="Y component">-150</param>
+                                                        </action>
+                                                        <action id="-16" name="Wait" sid="9508030090187508" type="System">
+                                                            <param id="0" name="Seconds">2.0</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="7559860735419939" type="Function">
+                                                            <param id="0" name="Name">&quot;ItemEntregado&quot;</param>
+                                                            <param id="1" name="Parameter {n}">Creatures.UID{###}EnvironmentObjects.UID</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                        <event-block disabled="1" sid="3171169575128878">
+                                            <conditions>
+                                                <condition id="-22" name="Else" sid="6363121493753122" type="System" />
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <event-block disabled="1" sid="1351570882632692">
+                                                    <conditions />
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="839171527028752" type="HeroSprite">
                                                             <param id="0" name="Instance variable">state</param>
                                                             <param id="1" name="Value">&quot;Idle&quot;</param>
                                                         </action>
-                                                        <action id="0" name="Call function" sid="564269911427261" type="Function">
+                                                        <action id="0" name="Call function" sid="9387772312679592" type="Function">
                                                             <param id="0" name="Name">&quot;RunMovement&quot;</param>
                                                             <param id="1" name="Parameter {n}">HeroSprite.UID{###}249</param>
                                                         </action>
-                                                        <action id="-10" name="Set value" sid="94849897038817" type="Creatures">
+                                                        <action id="-10" name="Set value" sid="3867543500797931" type="Creatures">
                                                             <param id="0" name="Instance variable">state</param>
                                                             <param id="1" name="Value">&quot;Fury&quot;</param>
                                                         </action>
-                                                        <action id="0" name="Call function" sid="3053091634076998" type="Function">
+                                                        <action id="0" name="Call function" sid="366192788145492" type="Function">
                                                             <param id="0" name="Name">&quot;RunMovement&quot;</param>
                                                             <param id="1" name="Parameter {n}">Creatures.UID{###}600</param>
                                                         </action>
-                                                        <action behavior="Platform" id="7" name="Simulate control" sid="421045610114294" type="Creatures">
+                                                        <action behavior="Platform" id="7" name="Simulate control" sid="4430456607168221" type="Creatures">
                                                             <param id="0" name="Control">2</param>
                                                         </action>
-                                                        <action id="-10" name="Set value" sid="4682951439960733" type="BubbleBg">
+                                                        <action id="-10" name="Set value" sid="6747133256370072" type="BubbleBg">
                                                             <param id="0" name="Instance variable">state</param>
                                                             <param id="1" name="Value">&quot;Close&quot;</param>
                                                         </action>
-                                                        <action id="-10" name="Set value" sid="1081915709615376" type="BubbleBg">
+                                                        <action id="-10" name="Set value" sid="8817906426227133" type="BubbleBg">
                                                             <param id="0" name="Instance variable">idObjectAsigned</param>
                                                             <param id="1" name="Value">-1</param>
                                                         </action>
-                                                        <action id="-3" name="Set position" sid="9251045983393215" type="BubbleBg">
+                                                        <action id="-3" name="Set position" sid="3398379877766877" type="BubbleBg">
                                                             <param id="0" name="X">-104</param>
                                                             <param id="1" name="Y">48</param>
                                                         </action>
@@ -1416,53 +1570,6 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block disabled="1" sid="2915233692947938">
-                    <conditions>
-                        <condition id="0" name="On function" sid="3932288295003681" type="Function">
-                            <param id="0" name="Name">&quot;DoorInUse&quot;</param>
-                        </condition>
-                    </conditions>
-                    <actions />
-                    <sub-events>
-                        <event-block disabled="1" sid="8598391456776703">
-                            <conditions>
-                                <condition id="-11" name="For Each" sid="2492140683671322" type="System">
-                                    <param id="0" name="Object">Creatures</param>
-                                </condition>
-                            </conditions>
-                            <actions />
-                            <sub-events>
-                                <event-block disabled="1" sid="1178013476036618">
-                                    <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="9036966166829691" type="Creatures">
-                                            <param id="0" name="Instance variable">action</param>
-                                            <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">&quot;EnterTheDoorEnd&quot;</param>
-                                        </condition>
-                                    </conditions>
-                                    <actions />
-                                    <sub-events>
-                                        <event-block disabled="1" sid="5212695809896904">
-                                            <conditions>
-                                                <condition id="-7" name="Compare instance variable" sid="5053552268260317" type="Creatures">
-                                                    <param id="0" name="Instance variable">idObjectAction</param>
-                                                    <param id="1" name="Comparison">0</param>
-                                                    <param id="2" name="Value">Function.Param(0)</param>
-                                                </condition>
-                                            </conditions>
-                                            <actions>
-                                                <action id="1" name="Set return value" sid="865848015897003" type="Function">
-                                                    <param id="0" name="Value">&quot;yes&quot;</param>
-                                                </action>
-                                                <action id="-24" name="Stop loop" sid="4344754394293139" type="System" />
-                                            </actions>
-                                        </event-block>
-                                    </sub-events>
-                                </event-block>
-                            </sub-events>
-                        </event-block>
-                    </sub-events>
-                </event-block>
                 <event-block sid="3035925901671227">
                     <conditions>
                         <condition id="0" name="On function" sid="5069864380682038" type="Function">
@@ -1581,6 +1688,35 @@
                                                             <param id="1" name="Value">&quot;WaitingForUser&quot;</param>
                                                         </action>
                                                     </actions>
+                                                </event-block>
+                                                <event-block sid="1053221911805385">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="3328249098652021" type="System" />
+                                                    </conditions>
+                                                    <actions />
+                                                    <sub-events>
+                                                        <event-block sid="8658765789596007">
+                                                            <conditions>
+                                                                <condition id="-7" name="Compare instance variable" sid="6839050434208238" type="Creatures">
+                                                                    <param id="0" name="Instance variable">actionSecundary</param>
+                                                                    <param id="1" name="Comparison">0</param>
+                                                                    <param id="2" name="Value">&quot;setScrollTo&quot;</param>
+                                                                </condition>
+                                                            </conditions>
+                                                            <actions>
+                                                                <action id="-10" name="Set value" sid="1179313975938528" type="Creatures">
+                                                                    <param id="0" name="Instance variable">actionSecundary</param>
+                                                                    <param id="1" name="Value">&quot;none&quot;</param>
+                                                                </action>
+                                                                <action behavior="ScrollTo" id="1" name="Set enabled" sid="9110223711590137" type="Creatures">
+                                                                    <param id="0" name="State">0</param>
+                                                                </action>
+                                                                <action behavior="ScrollTo" id="1" name="Set enabled" sid="2316867357510493" type="HeroSprite">
+                                                                    <param id="0" name="State">1</param>
+                                                                </action>
+                                                            </actions>
+                                                        </event-block>
+                                                    </sub-events>
                                                 </event-block>
                                             </sub-events>
                                         </event-block>
@@ -1726,6 +1862,51 @@
                                                 <action id="-9" name="Set value" sid="6850693341900031" type="System">
                                                     <param id="0" name="Variable">gameState</param>
                                                     <param id="1" name="Value">&quot;WaitingForUser&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <comment>Open Padlock:</comment>
+                                <event-block sid="4114075844115567">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="4079401477258649" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="8648466849928057" type="Creatures">
+                                            <param id="0" name="Instance variable">action</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;InitOpenPadlock&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="474084777423025">
+                                            <conditions />
+                                            <actions>
+                                                <action id="0" name="Call function" sid="4210241556426963" type="Function">
+                                                    <param id="0" name="Name">&quot;startOpenPadlock&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Creatures.UID</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="1727463771074524">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="6925630034468902" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="3375363402339681" type="Creatures">
+                                            <param id="0" name="Instance variable">action</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;startOpenPadlock&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="1366873780280261">
+                                            <conditions />
+                                            <actions>
+                                                <action id="0" name="Call function" sid="3299443721030867" type="Function">
+                                                    <param id="0" name="Name">&quot;ValideOpenPadlock&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Creatures.UID</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -2405,6 +2586,11 @@
                                                     <param id="0" name="Instance variable">idObjectCapture</param>
                                                     <param id="1" name="Value">EnvironmentObjects.UID</param>
                                                 </action>
+                                                <action id="5" name="Push" sid="6230597665111403" type="ArrayItems">
+                                                    <param id="0" name="Where">0</param>
+                                                    <param id="1" name="Value">EnvironmentObjects.nameObject</param>
+                                                    <param id="2" name="Axis">0</param>
+                                                </action>
                                                 <action id="-10" name="Set value" sid="247525174987076" type="EnvironmentObjects">
                                                     <param id="0" name="Instance variable">distanceMovement</param>
                                                     <param id="1" name="Value">distance(Self.X, Self.Y, Creatures.X,Creatures.Y)</param>
@@ -2491,7 +2677,376 @@
                                                 </event-block>
                                             </sub-events>
                                         </event-block>
+                                        <event-block sid="7426575701008986">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="4901623136067838" type="EnvironmentObjects">
+                                                    <param id="0" name="Instance variable">nameObject</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;scienceBook&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="9982428468370252" type="Function">
+                                                    <param id="0" name="Name">&quot;RunEvent&quot;</param>
+                                                    <param id="1" name="Parameter {n}">&quot;Phase1&quot;</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
                                     </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <comment>Open Padlock</comment>
+                        <event-block sid="36670086604636">
+                            <conditions>
+                                <condition id="0" name="On function" sid="7572810867949153" type="Function">
+                                    <param id="0" name="Name">&quot;OpenPadlock&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="1755099592812743">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="8928627261794519" type="EnvironmentObjects">
+                                            <param id="0" name="Unique ID">Function.Param(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="4354327006284986">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="1997861992177541" type="Creatures">
+                                                    <param id="0" name="Unique ID">Function.Param(1)</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="2515528138966246" type="Creatures">
+                                                    <param id="0" name="Instance variable">action</param>
+                                                    <param id="1" name="Value">&quot;InitOpenPadlock&quot;</param>
+                                                </action>
+                                                <action id="-10" name="Set value" sid="889301949022203" type="Creatures">
+                                                    <param id="0" name="Instance variable">idObjectAction</param>
+                                                    <param id="1" name="Value">EnvironmentObjects.UID</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="8148705749342311" type="Function">
+                                                    <param id="0" name="Name">&quot;RunMovement&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Creatures.UID{###}EnvironmentObjects.ImagePointX(&quot;InitPosition&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="9343357479596448">
+                            <conditions>
+                                <condition id="0" name="On function" sid="3299306042673411" type="Function">
+                                    <param id="0" name="Name">&quot;startOpenPadlock&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="8381215322245783">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="9495421425490687" type="Creatures">
+                                            <param id="0" name="Unique ID">Function.Param(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="3701096429301946">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="3363317219855" type="EnvironmentObjects">
+                                                    <param id="0" name="Unique ID">Creatures.idObjectAction</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="4590286758352739" type="Creatures">
+                                                    <param id="0" name="Instance variable">action</param>
+                                                    <param id="1" name="Value">&quot;startOpenPadlock&quot;</param>
+                                                </action>
+                                                <action id="0" name="Call function" sid="9046235782711459" type="Function">
+                                                    <param id="0" name="Name">&quot;RunMovement&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Creatures.UID{###}EnvironmentObjects.ImagePointX(&quot;EndPosition&quot;)</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="9549425737412416">
+                            <conditions>
+                                <condition id="0" name="On function" sid="8869759304953164" type="Function">
+                                    <param id="0" name="Name">&quot;ValideOpenPadlock&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="3055008853506287">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="1377368532633414" type="Creatures">
+                                            <param id="0" name="Unique ID">Function.Param(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="1964465762584617">
+                                            <conditions>
+                                                <condition id="-14" name="Pick by unique ID" sid="9462315897601303" type="EnvironmentObjects">
+                                                    <param id="0" name="Unique ID">Creatures.idObjectAction</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions />
+                                            <sub-events>
+                                                <variable constant="0" name="indexArrayDelete" sid="5150504174234376" static="0" type="number">0</variable>
+                                                <event-block sid="6868381925170211">
+                                                    <conditions>
+                                                        <condition id="5" name="Contains value" sid="133477483715727" type="ArrayItems">
+                                                            <param id="0" name="Value">EnvironmentObjects.nameObjectRequires</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-9" name="Set value" sid="9119689606961784" type="System">
+                                                            <param id="0" name="Variable">indexArrayDelete</param>
+                                                            <param id="1" name="Value">ArrayItems.CurX</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="2826774094718663" type="Creatures">
+                                                            <param id="0" name="Instance variable">action</param>
+                                                            <param id="1" name="Value">&quot;OpeningPadlock&quot;</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="9638986577980018" type="Function">
+                                                            <param id="0" name="Name">&quot;OpenPadlockKey&quot;</param>
+                                                            <param id="1" name="Parameter {n}">EnvironmentObjects.UID{###}EnvironmentObjects.nameObjectRequires{###}EnvironmentObjects.X{###}EnvironmentObjects.Y</param>
+                                                        </action>
+                                                        <action disabled="1" id="9" name="Delete" sid="9464554241108844" type="ArrayItems">
+                                                            <param id="0" name="Index">indexArrayDelete</param>
+                                                            <param id="1" name="Axis">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="4456540584764481">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="4292128136051359" type="System" />
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-10" name="Set value" sid="8231323237903933" type="Creatures">
+                                                            <param id="0" name="Instance variable">action</param>
+                                                            <param id="1" name="Value">&quot;none&quot;</param>
+                                                        </action>
+                                                        <action id="-10" name="Set value" sid="6514817985892724" type="Creatures">
+                                                            <param id="0" name="Instance variable">state</param>
+                                                            <param id="1" name="Value">&quot;Idle&quot;</param>
+                                                        </action>
+                                                        <action id="0" name="Call function" sid="3566315057501782" type="Function">
+                                                            <param id="0" name="Name">&quot;RunMovement&quot;</param>
+                                                            <param id="1" name="Parameter {n}">Creatures.UID{###}EnvironmentObjects.ImagePointX(&quot;InitPosition&quot;)</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="8346792620543894">
+                            <conditions>
+                                <condition id="0" name="On function" sid="5865882076292192" type="Function">
+                                    <param id="0" name="Name">&quot;OpenPadlockKey&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="2899051807852769">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="219051356785242" type="EnvironmentObjects">
+                                            <param id="0" name="Instance variable">nameObject</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Function.Param(1)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-26" name="Move to layer" sid="6382363582174537" type="EnvironmentObjects">
+                                            <param id="0" name="Layer">&quot;FrontComponentsLevel&quot;</param>
+                                        </action>
+                                        <action id="-3" name="Set position" sid="439046224062115" type="EnvironmentObjects">
+                                            <param id="0" name="X">Function.Param(2)</param>
+                                            <param id="1" name="Y">Function.Param(3)</param>
+                                        </action>
+                                        <action behavior="FadeIn" id="0" name="Restart fade" sid="1891076688066453" type="Ling" />
+                                        <action id="-3" name="Set position" sid="8692491860611263" type="Ling">
+                                            <param id="0" name="X">EnvironmentObjects.X</param>
+                                            <param id="1" name="Y">EnvironmentObjects.Y</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="7473361503975016">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="6450927530404112" type="captureItemPoint">
+                                                    <param id="0" name="Instance variable">idItemAssig</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">EnvironmentObjects.UID</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-10" name="Set value" sid="3392959418744545" type="captureItemPoint">
+                                                    <param id="0" name="Instance variable">idItemAssig</param>
+                                                    <param id="1" name="Value">-1</param>
+                                                </action>
+                                                <action id="-13" name="Set boolean" sid="9585255599869963" type="captureItemPoint">
+                                                    <param id="0" name="Instance variable">isFree</param>
+                                                    <param id="1" name="Value">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="2632406125913669">
+                                    <conditions>
+                                        <condition id="-14" name="Pick by unique ID" sid="3800705878660003" type="EnvironmentObjects">
+                                            <param id="0" name="Unique ID">Function.Param(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="9335272630259409">
+                                            <conditions />
+                                            <actions>
+                                                <action behavior="Flash" id="0" name="Flash" sid="4575607153913285" type="EnvironmentObjects">
+                                                    <param id="0" name="&apos;On&apos; time">0.5</param>
+                                                    <param id="1" name="&apos;Off&apos; time">0.5</param>
+                                                    <param id="2" name="Duration">2</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="2283913080822951">
+                            <conditions>
+                                <condition behavior="Flash" id="1" name="On flash ended" sid="8459541979306071" type="EnvironmentObjects" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <variable constant="0" name="nameObject" sid="5748631236928363" static="0" type="text">none</variable>
+                                <event-block sid="1314565458107707">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="1479693098858588" type="System">
+                                            <param id="0" name="Variable">nameObject</param>
+                                            <param id="1" name="Value">EnvironmentObjects.nameObjectRequires</param>
+                                        </action>
+                                    </actions>
+                                    <sub-events>
+                                        <event-block sid="1799371314236011">
+                                            <conditions />
+                                            <actions>
+                                                <action id="0" name="Call function" sid="5915346456904819" type="Function">
+                                                    <param id="0" name="Name">&quot;CompleteOpenPadlock&quot;</param>
+                                                    <param id="1" name="Parameter {n}">nameObject</param>
+                                                </action>
+                                                <action id="-9" name="Destroy" sid="5222824870342886" type="EnvironmentObjects" />
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="265638729886564">
+                            <conditions>
+                                <condition id="0" name="On function" sid="8369641868643329" type="Function">
+                                    <param id="0" name="Name">&quot;CompleteOpenPadlock&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="5745337990267215">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="5649093618610218" type="EnvironmentObjects">
+                                            <param id="0" name="Instance variable">nameObject</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">Function.Param(0)</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-3" name="Set position" sid="515540254596781" type="Ling">
+                                            <param id="0" name="X">0</param>
+                                            <param id="1" name="Y">-500</param>
+                                        </action>
+                                        <action id="-9" name="Destroy" sid="302546536333316" type="EnvironmentObjects" />
+                                        <action id="-10" name="Add to" sid="7589651498665811" type="System">
+                                            <param id="0" name="Variable">PadlockOpenCount</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="1006337656787056" type="HeroSprite">
+                                            <param id="0" name="Instance variable">action</param>
+                                            <param id="1" name="Value">&quot;none&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="7967375271606157" type="HeroSprite">
+                                            <param id="0" name="Instance variable">state</param>
+                                            <param id="1" name="Value">&quot;Idle&quot;</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="3827923500940255" type="Function">
+                                            <param id="0" name="Name">&quot;ValideTotalPadlockOpens&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="2224075318709971">
+                            <conditions>
+                                <condition id="0" name="On function" sid="1843245973134995" type="Function">
+                                    <param id="0" name="Name">&quot;ValideTotalPadlockOpens&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="5671518476252789">
+                                    <conditions>
+                                        <condition id="-14" name="Compare variable" sid="7559439038615443" type="System">
+                                            <param id="0" name="Variable">PadlockOpenCount</param>
+                                            <param id="1" name="Comparison">5</param>
+                                            <param id="2" name="Value">3</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Call function" sid="8556891358020818" type="Function">
+                                            <param id="0" name="Name">&quot;WINNER&quot;</param>
+                                            <param id="1" name="Parameter {n}"></param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5487448628791639">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="5220335477792579" type="System" />
+                                    </conditions>
+                                    <actions>
+                                        <action id="-9" name="Set value" sid="629437234780749" type="System">
+                                            <param id="0" name="Variable">gameState</param>
+                                            <param id="1" name="Value">&quot;WaitingForUser&quot;</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="1534869499604259">
+                            <conditions>
+                                <condition id="0" name="On function" sid="7807019524810648" type="Function">
+                                    <param id="0" name="Name">&quot;WINNER&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="6332059004571845">
+                                    <conditions />
+                                    <actions>
+                                        <action id="0" name="Set text" sid="3111074542252676" type="Debug">
+                                            <param id="0" name="Text">&quot;WINNNNNNNNERRR!!!&quot;</param>
+                                        </action>
+                                    </actions>
                                 </event-block>
                             </sub-events>
                         </event-block>
@@ -2591,6 +3146,48 @@
                         </event-group>
                     </sub-events>
                 </event-group>
+                <comment>Phases:</comment>
+                <event-block sid="1225040444599564">
+                    <conditions>
+                        <condition id="0" name="On function" sid="8970681877726175" type="Function">
+                            <param id="0" name="Name">&quot;RunEvent&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="7757849210644007">
+                            <conditions>
+                                <condition id="1" name="Compare parameter" sid="9614281739835462" type="Function">
+                                    <param id="0" name="Index">0</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Phase1&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="4875702692319675">
+                                    <conditions />
+                                    <actions>
+                                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="4774999587187092" type="HeroSprite">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="8768139679323161" type="Monster1">
+                                            <param id="0" name="Instance variable">actionSecundary</param>
+                                            <param id="1" name="Value">&quot;setScrollTo&quot;</param>
+                                        </action>
+                                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="9181764353700192" type="Monster1">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="0" name="Call function" sid="1822418174975979" type="Function">
+                                            <param id="0" name="Name">&quot;RunActionObject&quot;</param>
+                                            <param id="1" name="Parameter {n}">6{###}Monster1.UID</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
             </sub-events>
         </event-group>
         <event-group description="" sid="7764743276732633" title="Temporal code">

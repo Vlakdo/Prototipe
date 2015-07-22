@@ -10,6 +10,7 @@
     <unique-id>24vjaqsb38mpb</unique-id>
     <saved-with-version>20600</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Arr" version="1">Array</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
@@ -218,6 +219,42 @@
                         </animation>
                     </animation-folder>
                 </object-type>
+                <object-type name="Padlock1" sid="597209498895628">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7157926648345528" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.510204" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_libro_ciencia_candado.png">
+                                <image-point name="BubblePosition" x="0.5" y="-0.693878" />
+                                <image-point name="InitPosition" x="-1.05263" y="0.510204" />
+                                <image-point name="EndPosition" x="-0.789474" y="0.510204" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Padlock2" sid="628095909306411">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5255317426467074" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.510204" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_libro_geofrafia_candado.png">
+                                <image-point name="BubblePosition" x="0.5" y="-0.693878" />
+                                <image-point name="InitPosition" x="-1.05263" y="0.510204" />
+                                <image-point name="EndPosition" x="-0.789474" y="0.510204" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Padlock3" sid="5449098451815626">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="5394813288311173" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.510204" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_libro_math_candado.png">
+                                <image-point name="BubblePosition" x="0.5" y="-0.693878" />
+                                <image-point name="InitPosition" x="-1.05263" y="0.510204" />
+                                <image-point name="EndPosition" x="-0.789474" y="0.510204" />
+                            </frame>
+                        </animation>
+                    </animation-folder>
+                </object-type>
             </object-folder>
             <object-folder name="NoInteractives">
                 <object-type name="Item1" sid="1022297268422823">
@@ -233,6 +270,25 @@
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4844197696665302" speed="5">
                             <frame duration="1" hotspotX="0.506849" hotspotY="0.516129" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_props_box_2.png" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="Cague" sid="1741370412244047">
+                    <plugin id="Sprite" />
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="1192488015202004" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.502674" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_props_jaula.png">
+                                <collision-poly>
+                                    <point x="0.0681818" y="0.0802139" />
+                                    <point x="0.5" y="0.0427807" />
+                                    <point x="0.977273" y="0.026738" />
+                                    <point x="0.963636" y="0.497326" />
+                                    <point x="0.977273" y="0.973262" />
+                                    <point x="0.5" y="0.994652" />
+                                    <point x="0.0909091" y="0.893048" />
+                                    <point x="0.0590909" y="0.497326" />
+                                </collision-poly>
+                            </frame>
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -268,7 +324,7 @@
                     </behavior-type>
                 </behaviors>
                 <animation-folder>
-                    <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="4044474420412863" speed="0">
+                    <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="4044474420412863" speed="0">
                         <frame duration="0" hotspotX="0.511628" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\Premo\Heroes Invisibles - Crea 2015 Prototipo\Assets\Arrow icon.png">
                             <collision-poly>
                                 <point x="0" y="0.0307692" />
@@ -278,6 +334,9 @@
                             </collision-poly>
                         </frame>
                         <frame duration="0" hotspotX="0.511628" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\Premo\Heroes Invisibles - Crea 2015 Prototipo\Assets\hand icon.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.513514" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_libro_ciencia.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.513514" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_libro_geofrafia.png" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.513514" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_libro_math.png" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -457,6 +516,9 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type global="1" name="ArrayItems" sid="3922248576251716">
+            <plugin id="Arr" />
+        </object-type>
     </object-folder>
     <families>
         <family name="EnvironmentObjects" plugin-id="Sprite" sid="6312939631216441">
@@ -468,6 +530,9 @@
                 <member>Book3</member>
                 <member>Closet</member>
                 <member>DoorMarco</member>
+                <member>Padlock1</member>
+                <member>Padlock2</member>
+                <member>Padlock3</member>
             </members>
             <instance-variables>
                 <instance-variable name="objectClass" sid="6369322463896322" type="string" />
@@ -476,6 +541,7 @@
                 <instance-variable name="distanceMovement" sid="5913425804257967" type="number" />
                 <instance-variable name="nameObject" sid="8850097231778936" type="string" />
                 <instance-variable name="isEnable" sid="724665231124616" type="boolean" />
+                <instance-variable name="nameObjectRequires" sid="108727900684958" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="CustomMovement" sid="8093000019778948">
@@ -483,6 +549,9 @@
                 </behavior-type>
                 <behavior-type name="Physics" sid="1294340305153725">
                     <behavior id="Physics" />
+                </behavior-type>
+                <behavior-type name="Flash" sid="5192365078038348">
+                    <behavior id="Flash" />
                 </behavior-type>
             </behaviors>
         </family>
@@ -505,6 +574,7 @@
                 <instance-variable name="groundLevel" sid="8082548118847788" type="number" />
                 <instance-variable name="idObjectCapture" sid="3201740258525179" type="number" />
                 <instance-variable name="nameObjectRequires" sid="3861351472528446" type="string" />
+                <instance-variable name="actionSecundary" sid="9956200024191653" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="2412405618406821">
