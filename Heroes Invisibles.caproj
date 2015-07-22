@@ -33,8 +33,8 @@
         <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
     </configurations>
     <window-size>
-        <width>720</width>
-        <height>480</height>
+        <width>800</width>
+        <height>600</height>
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
@@ -117,7 +117,7 @@
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="8522458496873914" speed="5">
                         <frame duration="1" hotspotX="0.511111" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES\01 ARTE APROBADO\ESCENARIO\HI_puerta_marco.png">
-                            <image-point name="BubblePosition" x="0.511111" y="-0.351351" />
+                            <image-point name="BubblePosition" x="0.511111" y="-0.135135" />
                             <image-point name="Exit" x="1.08889" y="0.5" />
                             <image-point name="Enter" x="0.5" y="0.5" />
                             <collision-poly>
@@ -150,7 +150,7 @@
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2810343180392556" speed="5">
                         <frame duration="1" hotspotX="0.484536" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES\01 ARTE APROBADO\ESCENARIO\HI_puerta_marco.png">
-                            <image-point name="BubblePosition" x="0.484536" y="-0.351351" />
+                            <image-point name="BubblePosition" x="0.484536" y="-0.135135" />
                             <image-point name="Exit" x="-0.309278" y="0.5" />
                             <image-point name="Enter" x="0.505155" y="0.5" />
                             <collision-poly>
@@ -168,7 +168,7 @@
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3824439196866839" speed="5">
                         <frame duration="1" hotspotX="0.490566" hotspotY="0.506024" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES\01 ARTE APROBADO\ESCENARIO\HI_puerta_marco.png">
-                            <image-point name="BubblePosition" x="0.490566" y="-0.349398" />
+                            <image-point name="BubblePosition" x="0.490566" y="-0.180723" />
                             <image-point name="Exit" x="-0.471698" y="0.506024" />
                             <image-point name="Enter" x="0.509434" y="0.506024" />
                             <collision-poly>
@@ -183,11 +183,6 @@
             </object-type>
             <object-type name="Ball" sid="4385687194619107">
                 <plugin id="Sprite" />
-                <behaviors>
-                    <behavior-type name="Physics" sid="345191954330979">
-                        <behavior id="Physics" />
-                    </behavior-type>
-                </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="244079262393505" speed="5">
                         <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\Ball.png">
@@ -216,7 +211,7 @@
                 </instance-variables>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6576959290855934" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\Premo\Heroes Invisibles - Crea 2015 Prototipo\Assets\CloudBox.png">
+                        <frame duration="1" hotspotX="0.514286" hotspotY="0.918605" original-source="\\VBOXSVR\WorkingVb\Premo\Heroes Invisibles - Crea 2015 Prototipo\Assets\CloudBox.png">
                             <collision-poly>
                                 <point x="0.146789" y="0.118519" />
                                 <point x="0.495413" y="0" />
@@ -247,6 +242,18 @@
                             </collision-poly>
                         </frame>
                         <frame duration="0" hotspotX="0.511628" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\Premo\Heroes Invisibles - Crea 2015 Prototipo\Assets\hand icon.png" />
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="captureItemPoint" sid="6456838772915828">
+                <plugin id="Sprite" />
+                <instance-variables>
+                    <instance-variable name="index" sid="5944121066492336" type="number" />
+                    <instance-variable name="isFree" sid="1627368874866024" type="boolean" />
+                </instance-variables>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="9014666092015706" speed="5">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
                     </animation>
                 </animation-folder>
             </object-type>
@@ -427,10 +434,15 @@
                 <instance-variable name="typeHide" sid="629192689171036" type="string" />
                 <instance-variable name="frameIconBubble" sid="8857349843301278" type="number" />
                 <instance-variable name="distanceMovement" sid="5913425804257967" type="number" />
+                <instance-variable name="nameObject" sid="8850097231778936" type="string" />
+                <instance-variable name="isEnable" sid="724665231124616" type="boolean" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="CustomMovement" sid="8093000019778948">
                     <behavior id="custom" />
+                </behavior-type>
+                <behavior-type name="Physics" sid="1294340305153725">
+                    <behavior id="Physics" />
                 </behavior-type>
             </behaviors>
         </family>
@@ -452,6 +464,7 @@
                 <instance-variable name="goToXposition" sid="6858981119812973" type="number" />
                 <instance-variable name="groundLevel" sid="8082548118847788" type="number" />
                 <instance-variable name="idObjectCapture" sid="3201740258525179" type="number" />
+                <instance-variable name="nameObjectRequires" sid="3861351472528446" type="string" />
             </instance-variables>
             <behaviors>
                 <behavior-type name="Platform" sid="2412405618406821">

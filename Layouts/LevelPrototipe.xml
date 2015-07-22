@@ -102,6 +102,8 @@
                         <typeHide>none</typeHide>
                         <frameIconBubble>0</frameIconBubble>
                         <distanceMovement>0</distanceMovement>
+                        <nameObject>none</nameObject>
+                        <isEnable>true</isEnable>
                         <idExitDoor>13</idExitDoor>
                         <groundLevel>0</groundLevel>
                     </instance-variables>
@@ -110,6 +112,20 @@
                             <properties>
                                 <stepping-mode>None</stepping-mode>
                                 <pixels-per-step>5</pixels-per-step>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Physics">
+                            <properties>
+                                <immovable>No</immovable>
+                                <collision-mask>Use collision polygon</collision-mask>
+                                <prevent-rotation>No</prevent-rotation>
+                                <density>1</density>
+                                <friction>0.5</friction>
+                                <elasticity>0.2</elasticity>
+                                <linear-damping>0</linear-damping>
+                                <angular-damping>0.01</angular-damping>
+                                <bullet>No</bullet>
                                 <initial-state>Disabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -141,6 +157,8 @@
                         <typeHide>none</typeHide>
                         <frameIconBubble>0</frameIconBubble>
                         <distanceMovement>0</distanceMovement>
+                        <nameObject>none</nameObject>
+                        <isEnable>true</isEnable>
                         <idExitDoor>14</idExitDoor>
                         <groundLevel>1</groundLevel>
                     </instance-variables>
@@ -149,6 +167,20 @@
                             <properties>
                                 <stepping-mode>None</stepping-mode>
                                 <pixels-per-step>5</pixels-per-step>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Physics">
+                            <properties>
+                                <immovable>No</immovable>
+                                <collision-mask>Use collision polygon</collision-mask>
+                                <prevent-rotation>No</prevent-rotation>
+                                <density>1</density>
+                                <friction>0.5</friction>
+                                <elasticity>0.2</elasticity>
+                                <linear-damping>0</linear-damping>
+                                <angular-damping>0.01</angular-damping>
+                                <bullet>No</bullet>
                                 <initial-state>Disabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -180,6 +212,8 @@
                         <typeHide>none</typeHide>
                         <frameIconBubble>0</frameIconBubble>
                         <distanceMovement>0</distanceMovement>
+                        <nameObject>none</nameObject>
+                        <isEnable>true</isEnable>
                         <idExitDoor>6</idExitDoor>
                         <groundLevel>1</groundLevel>
                     </instance-variables>
@@ -188,6 +222,20 @@
                             <properties>
                                 <stepping-mode>None</stepping-mode>
                                 <pixels-per-step>5</pixels-per-step>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Physics">
+                            <properties>
+                                <immovable>No</immovable>
+                                <collision-mask>Use collision polygon</collision-mask>
+                                <prevent-rotation>No</prevent-rotation>
+                                <density>1</density>
+                                <friction>0.5</friction>
+                                <elasticity>0.2</elasticity>
+                                <linear-damping>0</linear-damping>
+                                <angular-damping>0.01</angular-damping>
+                                <bullet>No</bullet>
                                 <initial-state>Disabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -219,6 +267,8 @@
                         <typeHide>none</typeHide>
                         <frameIconBubble>0</frameIconBubble>
                         <distanceMovement>0</distanceMovement>
+                        <nameObject>none</nameObject>
+                        <isEnable>true</isEnable>
                         <idExitDoor>12</idExitDoor>
                         <groundLevel>2</groundLevel>
                     </instance-variables>
@@ -227,6 +277,20 @@
                             <properties>
                                 <stepping-mode>None</stepping-mode>
                                 <pixels-per-step>5</pixels-per-step>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Physics">
+                            <properties>
+                                <immovable>No</immovable>
+                                <collision-mask>Use collision polygon</collision-mask>
+                                <prevent-rotation>No</prevent-rotation>
+                                <density>1</density>
+                                <friction>0.5</friction>
+                                <elasticity>0.2</elasticity>
+                                <linear-damping>0</linear-damping>
+                                <angular-damping>0.01</angular-damping>
+                                <bullet>No</bullet>
                                 <initial-state>Disabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -365,12 +429,28 @@
                         <typeHide>backHide</typeHide>
                         <frameIconBubble>0</frameIconBubble>
                         <distanceMovement>0</distanceMovement>
+                        <nameObject>none</nameObject>
+                        <isEnable>true</isEnable>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="CustomMovement">
                             <properties>
                                 <stepping-mode>None</stepping-mode>
                                 <pixels-per-step>5</pixels-per-step>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Physics">
+                            <properties>
+                                <immovable>No</immovable>
+                                <collision-mask>Use collision polygon</collision-mask>
+                                <prevent-rotation>No</prevent-rotation>
+                                <density>1</density>
+                                <friction>0.5</friction>
+                                <elasticity>0.2</elasticity>
+                                <linear-damping>0</linear-damping>
+                                <angular-damping>0.01</angular-damping>
+                                <bullet>No</bullet>
                                 <initial-state>Disabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -429,12 +509,28 @@
                         <typeHide>backHide</typeHide>
                         <frameIconBubble>0</frameIconBubble>
                         <distanceMovement>0</distanceMovement>
+                        <nameObject>none</nameObject>
+                        <isEnable>true</isEnable>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="CustomMovement">
                             <properties>
                                 <stepping-mode>None</stepping-mode>
                                 <pixels-per-step>5</pixels-per-step>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Physics">
+                            <properties>
+                                <immovable>No</immovable>
+                                <collision-mask>Use collision polygon</collision-mask>
+                                <prevent-rotation>No</prevent-rotation>
+                                <density>1</density>
+                                <friction>0.5</friction>
+                                <elasticity>0.2</elasticity>
+                                <linear-damping>0</linear-damping>
+                                <angular-damping>0.01</angular-damping>
+                                <bullet>No</bullet>
                                 <initial-state>Disabled</initial-state>
                             </properties>
                         </behavior-instance>
@@ -492,6 +588,7 @@
                         <goToXposition>0</goToXposition>
                         <groundLevel>1</groundLevel>
                         <idObjectCapture>0</idObjectCapture>
+                        <nameObjectRequires>ball</nameObjectRequires>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -683,7 +780,8 @@
                         <timer>0</timer>
                         <goToXposition>0</goToXposition>
                         <groundLevel>1</groundLevel>
-                        <idObjectCapture>0</idObjectCapture>
+                        <idObjectCapture>-1</idObjectCapture>
+                        <nameObjectRequires>none</nameObjectRequires>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -717,8 +815,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>298.122283936</x>
-                        <y>430.082305908</y>
+                        <x>249</x>
+                        <y>427</y>
                         <z>0</z>
                         <width>66</width>
                         <height>102</height>
@@ -833,7 +931,8 @@
                         <timer>0</timer>
                         <goToXposition>0</goToXposition>
                         <groundLevel>0</groundLevel>
-                        <idObjectCapture>0</idObjectCapture>
+                        <idObjectCapture>-1</idObjectCapture>
+                        <nameObjectRequires>none</nameObjectRequires>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="Platform">
@@ -1016,6 +1115,8 @@
                         <typeHide>none</typeHide>
                         <frameIconBubble>1</frameIconBubble>
                         <distanceMovement>0</distanceMovement>
+                        <nameObject>ball</nameObject>
+                        <isEnable>true</isEnable>
                     </instance-variables>
                     <behavior-instances>
                         <behavior-instance type="CustomMovement">
@@ -1135,8 +1236,8 @@
                         <width>70</width>
                         <height>86</height>
                         <depth>0</depth>
-                        <hotspotX>0.5</hotspotX>
-                        <hotspotY>0.5</hotspotY>
+                        <hotspotX>0.514285743</hotspotX>
+                        <hotspotY>0.918604672</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -1154,8 +1255,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>-104</x>
-                        <y>39</y>
+                        <x>-103.780410767</x>
+                        <y>4.490755081</y>
                         <z>0</z>
                         <width>43</width>
                         <height>42</height>
@@ -1189,6 +1290,103 @@
                         <depth>0</depth>
                         <hotspotX>0</hotspotX>
                         <hotspotY>0</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+            </instances>
+            <effects />
+        </layer>
+        <layer name="HUD" sid="3595358584522093">
+            <initially-visible>1</initially-visible>
+            <background-color>255,255,255</background-color>
+            <transparent>1</transparent>
+            <parallax>
+                <x>0</x>
+                <y>0</y>
+            </parallax>
+            <zoom-rate>1</zoom-rate>
+            <opacity>1</opacity>
+            <force-own-texture>0</force-own-texture>
+            <global>0</global>
+            <use-render-cells>0</use-render-cells>
+            <blend-mode>0</blend-mode>
+            <effect-fallback>0</effect-fallback>
+            <instances>
+                <instance type="captureItemPoint" uid="32">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <index>1</index>
+                        <isFree>true</isFree>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>763</x>
+                        <y>568</y>
+                        <z>0</z>
+                        <width>14</width>
+                        <height>14</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="captureItemPoint" uid="33">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <index>2</index>
+                        <isFree>true</isFree>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>716</x>
+                        <y>568</y>
+                        <z>0</z>
+                        <width>14</width>
+                        <height>14</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="captureItemPoint" uid="34">
+                    <properties>
+                        <initial-visibility>Invisible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <index>3</index>
+                        <isFree>true</isFree>
+                    </instance-variables>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>669</x>
+                        <y>568</y>
+                        <z>0</z>
+                        <width>14</width>
+                        <height>14</height>
+                        <depth>0</depth>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
