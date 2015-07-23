@@ -949,71 +949,6 @@
                         <opacity>1</opacity>
                     </world>
                 </instance>
-                <instance type="Monster1" uid="26">
-                    <properties>
-                        <initial-visibility>Visible</initial-visibility>
-                        <initial-animation>Default</initial-animation>
-                        <initial-frame>0</initial-frame>
-                        <collisions>Enabled</collisions>
-                    </properties>
-                    <instance-variables>
-                        <type>enemy</type>
-                        <state>none</state>
-                        <destinationX>0</destinationX>
-                        <distanceMovePoint>0</distanceMovePoint>
-                        <directionMovePoint>none</directionMovePoint>
-                        <action>none</action>
-                        <idObjectAction>0</idObjectAction>
-                        <timer>0</timer>
-                        <goToXposition>0</goToXposition>
-                        <groundLevel>0</groundLevel>
-                        <idObjectCapture>-1</idObjectCapture>
-                        <nameObjectRequires>none</nameObjectRequires>
-                        <actionSecundary>none</actionSecundary>
-                    </instance-variables>
-                    <behavior-instances>
-                        <behavior-instance type="Platform">
-                            <properties>
-                                <max-speed>100</max-speed>
-                                <acceleration>1500</acceleration>
-                                <deceleration>1500</deceleration>
-                                <jump-strength>300</jump-strength>
-                                <gravity>1500</gravity>
-                                <max-fall-speed>1000</max-fall-speed>
-                                <double-jump>Disabled</double-jump>
-                                <jump-sustain>0</jump-sustain>
-                                <default-controls>No</default-controls>
-                                <initial-state>Enabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="ScrollTo">
-                            <properties>
-                                <initial-state>Disabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                        <behavior-instance type="CustomMovement">
-                            <properties>
-                                <stepping-mode>None</stepping-mode>
-                                <pixels-per-step>5</pixels-per-step>
-                                <initial-state>Disabled</initial-state>
-                            </properties>
-                        </behavior-instance>
-                    </behavior-instances>
-                    <blend-mode>0</blend-mode>
-                    <effect-fallback>0</effect-fallback>
-                    <world>
-                        <x>341.470336914</x>
-                        <y>656.88269043</y>
-                        <z>0</z>
-                        <width>67</width>
-                        <height>102</height>
-                        <depth>0</depth>
-                        <hotspotX>0.50746268</hotspotX>
-                        <hotspotY>0.5</hotspotY>
-                        <angle>0</angle>
-                        <opacity>1</opacity>
-                    </world>
-                </instance>
                 <instance type="SeeLine" uid="7">
                     <properties>
                         <initial-visibility>Invisible</initial-visibility>
@@ -1031,7 +966,7 @@
                     <effect-fallback>0</effect-fallback>
                     <world>
                         <x>340.470336914</x>
-                        <y>635.88269043</y>
+                        <y>656.88269043</y>
                         <z>0</z>
                         <width>250</width>
                         <height>4</height>
@@ -1396,8 +1331,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>60.69908905</x>
-                        <y>712.032775879</y>
+                        <x>97</x>
+                        <y>712</y>
                         <z>0</z>
                         <width>50.020973206</width>
                         <height>42.483566284</height>
@@ -1569,6 +1504,100 @@
                         <depth>0</depth>
                         <hotspotX>0.5</hotspotX>
                         <hotspotY>0.510204077</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Monster1" uid="26">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <type>enemy</type>
+                        <state>none</state>
+                        <destinationX>0</destinationX>
+                        <distanceMovePoint>0</distanceMovePoint>
+                        <directionMovePoint>none</directionMovePoint>
+                        <action>none</action>
+                        <idObjectAction>0</idObjectAction>
+                        <timer>0</timer>
+                        <goToXposition>0</goToXposition>
+                        <groundLevel>0</groundLevel>
+                        <idObjectCapture>-1</idObjectCapture>
+                        <nameObjectRequires>none</nameObjectRequires>
+                        <actionSecundary>none</actionSecundary>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Platform">
+                            <properties>
+                                <max-speed>100</max-speed>
+                                <acceleration>1500</acceleration>
+                                <deceleration>1500</deceleration>
+                                <jump-strength>300</jump-strength>
+                                <gravity>1500</gravity>
+                                <max-fall-speed>1000</max-fall-speed>
+                                <double-jump>Disabled</double-jump>
+                                <jump-sustain>0</jump-sustain>
+                                <default-controls>No</default-controls>
+                                <initial-state>Enabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="ScrollTo">
+                            <properties>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="CustomMovement">
+                            <properties>
+                                <stepping-mode>None</stepping-mode>
+                                <pixels-per-step>5</pixels-per-step>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>341.470336914</x>
+                        <y>677.88269043</y>
+                        <z>0</z>
+                        <width>67</width>
+                        <height>102</height>
+                        <depth>0</depth>
+                        <hotspotX>0.50746268</hotspotX>
+                        <hotspotY>0.5</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Alert" uid="48">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <idDoorEnter>0</idDoorEnter>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="Flash" />
+                        <behavior-instance type="Pin" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>341.653900146</x>
+                        <y>594.617248535</y>
+                        <z>0</z>
+                        <width>13.626599312</width>
+                        <height>55.479728699</height>
+                        <depth>0</depth>
+                        <hotspotX>0.696428597</hotspotX>
+                        <hotspotY>0.517543852</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
