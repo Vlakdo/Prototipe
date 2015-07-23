@@ -495,8 +495,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>417.956817627</x>
-                        <y>336.204711914</y>
+                        <x>-193.909759521</x>
+                        <y>336.204650879</y>
                         <z>0</z>
                         <width>135</width>
                         <height>30</height>
@@ -558,6 +558,61 @@
                         <depth>0</depth>
                         <hotspotX>0.493150681</hotspotX>
                         <hotspotY>0.505882382</hotspotY>
+                        <angle>0</angle>
+                        <opacity>1</opacity>
+                    </world>
+                </instance>
+                <instance type="Stove" uid="49">
+                    <properties>
+                        <initial-visibility>Visible</initial-visibility>
+                        <initial-animation>Default</initial-animation>
+                        <initial-frame>0</initial-frame>
+                        <collisions>Enabled</collisions>
+                    </properties>
+                    <instance-variables>
+                        <objectClass>hide</objectClass>
+                        <typeHide>backHide</typeHide>
+                        <frameIconBubble>0</frameIconBubble>
+                        <distanceMovement>0</distanceMovement>
+                        <nameObject>none</nameObject>
+                        <isEnable>true</isEnable>
+                        <nameObjectRequires>none</nameObjectRequires>
+                    </instance-variables>
+                    <behavior-instances>
+                        <behavior-instance type="CustomMovement">
+                            <properties>
+                                <stepping-mode>None</stepping-mode>
+                                <pixels-per-step>5</pixels-per-step>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Physics">
+                            <properties>
+                                <immovable>No</immovable>
+                                <collision-mask>Bounding box</collision-mask>
+                                <prevent-rotation>No</prevent-rotation>
+                                <density>1</density>
+                                <friction>0.5</friction>
+                                <elasticity>0.5</elasticity>
+                                <linear-damping>0</linear-damping>
+                                <angular-damping>0.01</angular-damping>
+                                <bullet>No</bullet>
+                                <initial-state>Disabled</initial-state>
+                            </properties>
+                        </behavior-instance>
+                        <behavior-instance type="Flash" />
+                    </behavior-instances>
+                    <blend-mode>0</blend-mode>
+                    <effect-fallback>0</effect-fallback>
+                    <world>
+                        <x>529.091308594</x>
+                        <y>224.601531982</y>
+                        <z>0</z>
+                        <width>75</width>
+                        <height>56</height>
+                        <depth>0</depth>
+                        <hotspotX>0.479999989</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
@@ -851,8 +906,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>249</x>
-                        <y>427</y>
+                        <x>224.885375977</x>
+                        <y>425.710876465</y>
                         <z>0</z>
                         <width>66</width>
                         <height>102</height>
@@ -965,8 +1020,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>340.470336914</x>
-                        <y>656.88269043</y>
+                        <x>419.952148438</x>
+                        <y>635.107910156</y>
                         <z>0</z>
                         <width>250</width>
                         <height>4</height>
@@ -1161,7 +1216,7 @@
                         <behavior-instance type="Physics">
                             <properties>
                                 <immovable>No</immovable>
-                                <collision-mask>Circle</collision-mask>
+                                <collision-mask>Bounding box</collision-mask>
                                 <prevent-rotation>No</prevent-rotation>
                                 <density>1</density>
                                 <friction>0.5</friction>
@@ -1177,8 +1232,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>663</x>
-                        <y>223</y>
+                        <x>658</x>
+                        <y>224.902923584</y>
                         <z>0</z>
                         <width>43</width>
                         <height>57</height>
@@ -1202,7 +1257,7 @@
                         <frameIconBubble>1</frameIconBubble>
                         <distanceMovement>0</distanceMovement>
                         <nameObject>mathBook</nameObject>
-                        <isEnable>true</isEnable>
+                        <isEnable>false</isEnable>
                         <nameObjectRequires>none</nameObjectRequires>
                     </instance-variables>
                     <behavior-instances>
@@ -1216,7 +1271,7 @@
                         <behavior-instance type="Physics">
                             <properties>
                                 <immovable>No</immovable>
-                                <collision-mask>Circle</collision-mask>
+                                <collision-mask>Bounding box</collision-mask>
                                 <prevent-rotation>No</prevent-rotation>
                                 <density>1</density>
                                 <friction>0.5</friction>
@@ -1271,7 +1326,7 @@
                         <behavior-instance type="Physics">
                             <properties>
                                 <immovable>No</immovable>
-                                <collision-mask>Circle</collision-mask>
+                                <collision-mask>Bounding box</collision-mask>
                                 <prevent-rotation>No</prevent-rotation>
                                 <density>1</density>
                                 <friction>0.5</friction>
@@ -1309,8 +1364,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>734.929870605</x>
-                        <y>142.953079224</y>
+                        <x>794.625976563</x>
+                        <y>176.104003906</y>
                         <z>0</z>
                         <width>45</width>
                         <height>67</height>
@@ -1561,8 +1616,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>341.470336914</x>
-                        <y>677.88269043</y>
+                        <x>420.952148438</x>
+                        <y>656.107910156</y>
                         <z>0</z>
                         <width>67</width>
                         <height>102</height>
@@ -1590,8 +1645,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>341.653900146</x>
-                        <y>594.617248535</y>
+                        <x>420.952148438</x>
+                        <y>573.107910156</y>
                         <z>0</z>
                         <width>13.626599312</width>
                         <height>55.479728699</height>
@@ -1840,27 +1895,27 @@
                 </instance>
                 <instance type="Debug" uid="21">
                     <properties>
-                        <text>Text</text>
+                        <text>Debug</text>
                         <initial-visibility>Visible</initial-visibility>
                         <font>Arial,-16</font>
                         <color>255,255,255</color>
-                        <horizontal-alignment>Left</horizontal-alignment>
-                        <vertical-alignment>Top</vertical-alignment>
-                        <hotspot>Top-left</hotspot>
+                        <horizontal-alignment>Center</horizontal-alignment>
+                        <vertical-alignment>Center</vertical-alignment>
+                        <hotspot>Center</hotspot>
                         <wrapping>Word</wrapping>
                         <line-height>0</line-height>
                     </properties>
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>410.054748535</x>
-                        <y>275.599365234</y>
+                        <x>472.407928467</x>
+                        <y>318.750549316</y>
                         <z>0</z>
                         <width>180.508850098</width>
                         <height>61.505889893</height>
                         <depth>0</depth>
-                        <hotspotX>0</hotspotX>
-                        <hotspotY>0</hotspotY>
+                        <hotspotX>0.5</hotspotX>
+                        <hotspotY>0.5</hotspotY>
                         <angle>0</angle>
                         <opacity>1</opacity>
                     </world>
