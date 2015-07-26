@@ -16,6 +16,10 @@
                         <event-block sid="9432375755205286">
                             <conditions />
                             <actions>
+                                <action id="-28" name="Set canvas size" sid="2945477660278739" type="System">
+                                    <param id="0" name="Width">800</param>
+                                    <param id="1" name="Height">600</param>
+                                </action>
                                 <action id="-9" name="Set value" sid="8073481391221089" type="System">
                                     <param id="0" name="Variable">gameState</param>
                                     <param id="1" name="Value">&quot;none&quot;</param>
@@ -59,10 +63,6 @@
                                 <action behavior="Platform" id="11" name="Set enabled" sid="871622730554527" type="Creatures">
                                     <param id="0" name="State">1</param>
                                 </action>
-                                <action id="-9" name="Set value" sid="6919495511686548" type="System">
-                                    <param id="0" name="Variable">gameState</param>
-                                    <param id="1" name="Value">&quot;WaitingForUser&quot;</param>
-                                </action>
                                 <action id="-13" name="Set boolean" sid="7045244429663959" type="SeeLine">
                                     <param id="0" name="Instance variable">isEnable</param>
                                     <param id="1" name="Value">1</param>
@@ -73,6 +73,11 @@
                                 <action behavior="Pin" id="0" name="Pin to object" sid="7970093209101288" type="Alert">
                                     <param id="0" name="Pin to">Monster1</param>
                                     <param id="1" name="Mode">1</param>
+                                </action>
+                                <action behavior="FadeOut" id="1" name="Start fade" sid="1175774375503377" type="Fade" />
+                                <action id="-9" name="Set value" sid="6919495511686548" type="System">
+                                    <param id="0" name="Variable">gameState</param>
+                                    <param id="1" name="Value">&quot;WaitingForUser&quot;</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -4014,9 +4019,9 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="7764743276732633" title="Temporal code">
+        <event-group description="" disabled="1" sid="7764743276732633" title="Temporal code">
             <sub-events>
-                <event-block sid="6230948287471291">
+                <event-block disabled="1" sid="6230948287471291">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="3874242033155973" type="Keyboard">
                             <param id="0" name="Key">68 (D)</param>
@@ -4024,7 +4029,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="9612212706036656">
+                        <event-block disabled="1" sid="9612212706036656">
                             <conditions>
                                 <condition id="-9" inverted="1" name="Is visible" sid="9693368286482152" type="SeeLine" />
                             </conditions>
@@ -4034,7 +4039,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block sid="7353015144441096">
+                        <event-block disabled="1" sid="7353015144441096">
                             <conditions>
                                 <condition id="-22" name="Else" sid="847274510069704" type="System" />
                             </conditions>
@@ -4046,7 +4051,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="5101629962613364">
+                <event-block disabled="1" sid="5101629962613364">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="1389295235322991" type="Keyboard">
                             <param id="0" name="Key">67 (C)</param>
@@ -4054,7 +4059,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="1993255611179405">
+                        <event-block disabled="1" sid="1993255611179405">
                             <conditions />
                             <actions>
                                 <action behavior="ScrollTo" id="1" name="Set enabled" sid="8203171796703777" type="HeroSprite">
@@ -4067,7 +4072,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block sid="8534727003316409">
+                <event-block disabled="1" sid="8534727003316409">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="2608201223714587" type="Keyboard">
                             <param id="0" name="Key">70 (F)</param>
@@ -4075,17 +4080,13 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="962111129727147">
+                        <event-block disabled="1" sid="962111129727147">
                             <conditions />
                             <actions>
-                                <action id="-8" name="Set angle" sid="1235776126822571" type="Book2">
-                                    <param id="0" name="Angle">-40</param>
-                                </action>
-                                <action behavior="Physics" id="27" name="Set enabled" sid="3232985080763159" type="Book2">
-                                    <param id="0" name="Mode">1</param>
-                                </action>
-                                <action behavior="Physics" id="27" name="Set enabled" sid="5177089391328001" type="platform">
-                                    <param id="0" name="Mode">1</param>
+                                <action id="-33" name="Set layer parallax" sid="3169561517179541" type="System">
+                                    <param id="0" name="Layer">&quot;HUD&quot;</param>
+                                    <param id="1" name="Parallax X">0</param>
+                                    <param id="2" name="Parallax Y">0</param>
                                 </action>
                             </actions>
                         </event-block>

@@ -1,0 +1,121 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Menu Event</name>
+    <events>
+        <variable constant="0" name="menuState" sid="257976253248782" static="0" type="text">none</variable>
+        <event-block sid="1116693269995476">
+            <conditions>
+                <condition id="3" name="On touched object" sid="8812431548133419" type="Touch">
+                    <param id="0" name="Object">PlayButton</param>
+                </condition>
+                <condition id="-8" name="Is boolean instance variable set" sid="6957172037785823" type="PlayButton">
+                    <param id="0" name="Instance variable">isEnable</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="9666625040185791">
+                    <conditions />
+                    <actions>
+                        <action id="-13" name="Set boolean" sid="6523075595414487" type="PlayButton">
+                            <param id="0" name="Instance variable">isEnable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action behavior="Fade" id="0" name="Restart fade" sid="4471957424832117" type="PlayButton" />
+                        <action behavior="Fade" id="0" name="Restart fade" sid="1257569744707026" type="Title" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="2195853712957093">
+            <conditions>
+                <condition behavior="Fade" id="0" name="On fade-out finished" sid="5011924745494855" type="Title" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7964941364475779">
+                    <conditions />
+                    <actions>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="7590181302856031" type="Follow">
+                            <param id="0" name="X">590</param>
+                            <param id="1" name="Y">500</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5885377261749727">
+            <conditions>
+                <condition behavior="Pathfinding" id="0" name="On path found" sid="6791470779492502" type="Follow" />
+            </conditions>
+            <actions>
+                <action behavior="Pathfinding" id="1" name="Move along path" sid="7129544708917422" type="Follow" />
+                <action id="-9" name="Set value" sid="1233999903939172" type="System">
+                    <param id="0" name="Variable">menuState</param>
+                    <param id="1" name="Value">&quot;Zoom&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4567554711897473">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="6605818487894499" type="System">
+                    <param id="0" name="Variable">menuState</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;Zoom&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2420929386021547">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="4600191966569599" type="System">
+                            <param id="0" name="First value">LayoutScale</param>
+                            <param id="1" name="Comparison">2</param>
+                            <param id="2" name="Second value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-20" name="Set layout scale" sid="1275289341418856" type="System">
+                            <param id="0" name="Scale">LayoutScale + 2.0*dt</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9716646926647887">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="3676459489435607" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="7581934651404039" type="System">
+                            <param id="0" name="Variable">menuState</param>
+                            <param id="1" name="Value">&quot;GoGamePlay&quot;</param>
+                        </action>
+                        <action id="-20" name="Set layout scale" sid="924681906052719" type="System">
+                            <param id="0" name="Scale">5</param>
+                        </action>
+                        <action behavior="FadeIn" id="0" name="Restart fade" sid="2982775165894373" type="Fade" />
+                        <action id="-15" name="Set visible" sid="2311954999671167" type="Fade">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6064534793388623">
+            <conditions>
+                <condition behavior="FadeIn" id="1" name="On fade-in finished" sid="9322039943930704" type="Fade" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="428421935416546">
+                    <conditions />
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="6133783743153274" type="System">
+                            <param id="0" name="Layout">LevelPrototipe</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>
