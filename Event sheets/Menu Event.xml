@@ -13,13 +13,20 @@
                 <event-block sid="7601955306643947">
                     <conditions />
                     <actions>
-                        <action id="-28" name="Set canvas size" sid="4859316048211845" type="System">
-                            <param id="0" name="Width">1800</param>
-                            <param id="1" name="Height">1350</param>
+                        <action id="-20" name="Set layout scale" sid="3442974529544671" type="System">
+                            <param id="0" name="Scale">1</param>
                         </action>
                         <action id="-9" name="Set value" sid="6949670000870883" type="System">
                             <param id="0" name="Variable">menuState</param>
                             <param id="1" name="Value">&quot;none&quot;</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="931326144681118" type="PlayButton">
+                            <param id="0" name="Instance variable">isEnable</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="0" name="Call function" sid="3114357412183483" type="Function">
+                            <param id="0" name="Name">&quot;RemoveFade&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
@@ -70,13 +77,19 @@
             <conditions>
                 <condition behavior="Pathfinding" id="0" name="On path found" sid="6791470779492502" type="Follow" />
             </conditions>
-            <actions>
-                <action behavior="Pathfinding" id="1" name="Move along path" sid="7129544708917422" type="Follow" />
-                <action id="-9" name="Set value" sid="1233999903939172" type="System">
-                    <param id="0" name="Variable">menuState</param>
-                    <param id="1" name="Value">&quot;Zoom&quot;</param>
-                </action>
-            </actions>
+            <actions />
+            <sub-events>
+                <event-block sid="9204004167376575">
+                    <conditions />
+                    <actions>
+                        <action behavior="Pathfinding" id="1" name="Move along path" sid="7129544708917422" type="Follow" />
+                        <action id="-9" name="Set value" sid="1233999903939172" type="System">
+                            <param id="0" name="Variable">menuState</param>
+                            <param id="1" name="Value">&quot;Zoom&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
         </event-block>
         <event-block sid="4567554711897473">
             <conditions>
@@ -133,6 +146,32 @@
                     <actions>
                         <action id="-2" name="Go to layout" sid="6133783743153274" type="System">
                             <param id="0" name="Layout">LevelPrototipe</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="2167787351449869">
+            <conditions>
+                <condition id="0" name="On function" sid="6638283629925226" type="Function">
+                    <param id="0" name="Name">&quot;RemoveFade&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="2166174092536108">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="5222421064874268" type="System">
+                            <param id="0" name="Seconds">1.0</param>
+                        </action>
+                        <action id="-4" name="Set layer visible" sid="139162602563177" type="System">
+                            <param id="0" name="Layer">&quot;Fade&quot;</param>
+                            <param id="1" name="Visibility">0</param>
+                        </action>
+                        <action id="-13" name="Set boolean" sid="4783526423892201" type="PlayButton">
+                            <param id="0" name="Instance variable">isEnable</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>

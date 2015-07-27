@@ -10,8 +10,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <display name="HTML5" />
     </configurations>
     <open-tabs>
-        <layout active="1" order="0">LevelPrototipe</layout>
-        <event-sheet order="1">LevelPrototipe Event</event-sheet>
+        <layout order="0">LevelPrototipe</layout>
+        <layout order="2">Menu</layout>
+        <layout order="4">Winner</layout>
+        <event-sheet active="1" order="1">LevelPrototipe Event</event-sheet>
+        <event-sheet order="3">Menu Event</event-sheet>
+        <event-sheet order="5">Winner Event</event-sheet>
     </open-tabs>
     <properties>
         <property expanded="1" name="About" />
@@ -22,20 +26,21 @@ you probably do not want to add any .uistate.xml files to the repository.-->
     <families-expanded root="1">
         <family expanded="0" name="EnvironmentObjects" />
         <family expanded="0" name="Creatures" />
+        <family expanded="0" name="Buttons" />
     </families-expanded>
     <folders-expanded>
         <folder expanded="1" path="object-folder/" />
         <folder expanded="1" path="object-folder/Level/" />
         <folder expanded="1" path="object-folder/Level/InterfaceIcons/" />
-        <folder expanded="0" path="object-folder/Level/LevelComponents/" />
+        <folder expanded="1" path="object-folder/Level/LevelComponents/" />
         <folder expanded="1" path="object-folder/Level/LevelComponents/Interactives/" />
-        <folder expanded="1" path="object-folder/Level/LevelComponents/NoInteractives/" />
+        <folder expanded="0" path="object-folder/Level/LevelComponents/NoInteractives/" />
         <folder expanded="0" path="object-folder/Level/LevelComponents/NoInteractives/Items/" />
         <folder expanded="0" path="object-folder/Level/Temporal/" />
         <folder expanded="0" path="object-folder/Level/Childrens/" />
         <folder expanded="0" path="object-folder/Menu/" />
         <folder expanded="0" path="object-folder/Mechanics/" />
-        <folder expanded="1" path="object-folder/Winner/" />
+        <folder expanded="0" path="object-folder/Winner/" />
         <folder expanded="1" path="layout-folder/" />
         <folder expanded="1" path="event-folder/" />
         <folder expanded="0" path="file-folder/" />
@@ -46,6 +51,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/IconsBubble/" />
         <folder expanded="1" path="animation-folder/captureItemPoint/" />
         <folder expanded="1" path="animation-folder/Alert/" />
+        <folder expanded="1" path="animation-folder/TrackBotton/" />
+        <folder expanded="1" path="animation-folder/InstructionsBotton/" />
         <folder expanded="1" path="animation-folder/Ball/" />
         <folder expanded="1" path="animation-folder/Barril/" />
         <folder expanded="1" path="animation-folder/Book1/" />
@@ -108,6 +115,8 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="1" path="animation-folder/Monster2/" />
         <folder expanded="1" path="animation-folder/SeeLine/" />
         <folder expanded="1" path="animation-folder/LingEnd/" />
+        <folder expanded="1" path="animation-folder/Tracks/" />
+        <folder expanded="1" path="animation-folder/Instructions/" />
         <folder expanded="1" path="animation-folder/BgMenu/" />
         <folder expanded="1" path="animation-folder/Title/" />
         <folder expanded="1" path="animation-folder/PlayButton/" />

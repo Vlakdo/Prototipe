@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>LevelPrototipe Event</name>
     <events>
+        <variable constant="0" name="popupState" sid="4215836179948247" static="0" type="text">none</variable>
         <variable constant="0" name="Goto" sid="9355234666429777" static="0" type="text">none</variable>
         <variable constant="0" name="PadlockOpenCount" sid="779184448876331" static="0" type="number">0</variable>
         <variable constant="0" name="gameState" sid="7716998056900676" static="0" type="text">none</variable>
@@ -17,12 +18,16 @@
                         <event-block sid="9432375755205286">
                             <conditions />
                             <actions>
-                                <action id="-28" name="Set canvas size" sid="2945477660278739" type="System">
+                                <action id="-28" name="Set canvas size" sid="9548024283667574" type="System">
                                     <param id="0" name="Width">800</param>
                                     <param id="1" name="Height">600</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="8073481391221089" type="System">
                                     <param id="0" name="Variable">gameState</param>
+                                    <param id="1" name="Value">&quot;none&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="4985701724850799" type="System">
+                                    <param id="0" name="Variable">popupState</param>
                                     <param id="1" name="Value">&quot;none&quot;</param>
                                 </action>
                                 <action id="-9" name="Set value" sid="5204279298470974" type="System">
@@ -80,9 +85,36 @@
                                     <param id="1" name="Mode">1</param>
                                 </action>
                                 <action behavior="FadeOut" id="1" name="Start fade" sid="1175774375503377" type="Fade" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="682395274241006">
+                    <conditions>
+                        <condition behavior="FadeOut" id="0" name="On fade-out finished" sid="9914706960029173" type="Fade" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9710246110483168">
+                            <conditions />
+                            <actions>
                                 <action id="-9" name="Set value" sid="6919495511686548" type="System">
                                     <param id="0" name="Variable">gameState</param>
                                     <param id="1" name="Value">&quot;WaitingForUser&quot;</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="1193095133548273" type="System">
+                                    <param id="0" name="Variable">popupState</param>
+                                    <param id="1" name="Value">&quot;InstructionsOrTracks&quot;</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="5622537592869976" type="System">
+                                    <param id="0" name="Layer">&quot;Opacity&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="3882564300986659" type="Instructions">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="-13" name="Set time scale" sid="6799712426255102" type="System">
+                                    <param id="0" name="Time scale">0</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -507,43 +539,71 @@
                 <event-block sid="4574701909051116">
                     <conditions>
                         <condition id="1" name="On any touch end" sid="9412370832104401" type="Touch" />
-                        <condition id="4" inverted="1" name="Is touching object" sid="3966355008993222" type="Touch">
-                            <param id="0" name="Object">BubbleBg</param>
-                        </condition>
-                        <condition id="-14" name="Compare variable" sid="405722832621456" type="System">
-                            <param id="0" name="Variable">gameState</param>
-                            <param id="1" name="Comparison">0</param>
-                            <param id="2" name="Value">&quot;WaitingForUser&quot;</param>
+                        <condition disabled="1" id="4" inverted="1" name="Is touching object" sid="3966355008993222" type="Touch">
+                            <param id="0" name="Object">Buttons</param>
                         </condition>
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block sid="142772996707964">
+                        <event-block sid="1920781910867105">
                             <conditions>
-                                <condition id="-7" name="Compare instance variable" sid="8935094542597226" type="Creatures">
-                                    <param id="0" name="Instance variable">type</param>
+                                <condition id="-14" name="Compare variable" sid="405722832621456" type="System">
+                                    <param id="0" name="Variable">gameState</param>
                                     <param id="1" name="Comparison">0</param>
-                                    <param id="2" name="Value">&quot;hero&quot;</param>
+                                    <param id="2" name="Value">&quot;WaitingForUser&quot;</param>
+                                </condition>
+                                <condition id="-14" name="Compare variable" sid="932903437493867" type="System">
+                                    <param id="0" name="Variable">popupState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;WaitingForUser&quot;</param>
                                 </condition>
                             </conditions>
                             <actions />
                             <sub-events>
-                                <event-block sid="1448369318699745">
+                                <event-block sid="142772996707964">
                                     <conditions>
-                                        <condition id="-7" name="Compare instance variable" sid="6031054777155382" type="Creatures">
-                                            <param id="0" name="Instance variable">action</param>
+                                        <condition id="-7" name="Compare instance variable" sid="8935094542597226" type="Creatures">
+                                            <param id="0" name="Instance variable">type</param>
                                             <param id="1" name="Comparison">0</param>
-                                            <param id="2" name="Value">&quot;none&quot;</param>
+                                            <param id="2" name="Value">&quot;hero&quot;</param>
                                         </condition>
                                     </conditions>
-                                    <actions>
-                                        <action id="0" name="Call function" sid="4354685554164969" type="Function">
-                                            <param id="0" name="Name">&quot;RunMovement&quot;</param>
-                                            <param id="1" name="Parameter {n}">Creatures.UID{###}Touch.X</param>
-                                        </action>
-                                    </actions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="1448369318699745">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="6031054777155382" type="Creatures">
+                                                    <param id="0" name="Instance variable">action</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">&quot;none&quot;</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="0" name="Call function" sid="4354685554164969" type="Function">
+                                                    <param id="0" name="Name">&quot;RunMovement&quot;</param>
+                                                    <param id="1" name="Parameter {n}">Creatures.UID{###}Touch.X</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                        <event-block sid="2811143449208022">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="8065980663258673" type="System" />
+                                <condition id="-14" name="Compare variable" sid="4731681853748321" type="System">
+                                    <param id="0" name="Variable">popupState</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;CloseInstructionsOrTracks&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="9707743596374478" type="System">
+                                    <param id="0" name="Variable">popupState</param>
+                                    <param id="1" name="Value">&quot;WaitingForUser&quot;</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -989,6 +1049,134 @@
                                     </actions>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3717190145732638">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="8193066392782697" type="Touch">
+                            <param id="0" name="Object">TrackBotton</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="6058964766197667" type="System">
+                            <param id="0" name="Variable">popupState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;WaitingForUser&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6154714553842811">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="5638347423394761" type="System">
+                                    <param id="0" name="Variable">popupState</param>
+                                    <param id="1" name="Value">&quot;RunInstructionsOrTracks&quot;</param>
+                                </action>
+                                <action id="-13" name="Set time scale" sid="4849012988015734" type="System">
+                                    <param id="0" name="Time scale">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="8810734967332424" type="System">
+                                    <param id="0" name="Layer">&quot;Opacity&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="1008874374662855" type="Tracks">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4189877086534646">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="9439883222627973" type="Touch">
+                            <param id="0" name="Object">InstructionsBotton</param>
+                        </condition>
+                        <condition id="-14" name="Compare variable" sid="673230775978779" type="System">
+                            <param id="0" name="Variable">popupState</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;WaitingForUser&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6005299606264412">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="7723995866229878" type="System">
+                                    <param id="0" name="Variable">popupState</param>
+                                    <param id="1" name="Value">&quot;RunInstructionsOrTracks&quot;</param>
+                                </action>
+                                <action id="-13" name="Set time scale" sid="8016781179816645" type="System">
+                                    <param id="0" name="Time scale">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="4097968204880032" type="System">
+                                    <param id="0" name="Layer">&quot;Opacity&quot;</param>
+                                    <param id="1" name="Visibility">1</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="5234411277922433" type="Instructions">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3019520258924326">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="6511471316768647" type="Touch">
+                            <param id="0" name="Object">Tracks</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="1944821752013057" type="Tracks" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6836353000476098">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="9141778137945588" type="System">
+                                    <param id="0" name="Variable">popupState</param>
+                                    <param id="1" name="Value">&quot;CloseInstructionsOrTracks&quot;</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="1507902778150373" type="Tracks">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="800931899455447" type="System">
+                                    <param id="0" name="Layer">&quot;Opacity&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-13" name="Set time scale" sid="2205657379241082" type="System">
+                                    <param id="0" name="Time scale">1.0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="1536882149380696">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="652728736814845" type="Touch">
+                            <param id="0" name="Object">Instructions</param>
+                        </condition>
+                        <condition id="-9" name="Is visible" sid="1099862263704865" type="Instructions" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2514259453136884">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="6756941633035633" type="System">
+                                    <param id="0" name="Variable">popupState</param>
+                                    <param id="1" name="Value">&quot;CloseInstructionsOrTracks&quot;</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="9761905712694644" type="Instructions">
+                                    <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="-4" name="Set layer visible" sid="4724833713850297" type="System">
+                                    <param id="0" name="Layer">&quot;Opacity&quot;</param>
+                                    <param id="1" name="Visibility">0</param>
+                                </action>
+                                <action id="-13" name="Set time scale" sid="7514011317768747" type="System">
+                                    <param id="0" name="Time scale">1.0</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -2597,23 +2785,6 @@
                                                     <param id="1" name="Parameter {n}">Creatures.UID{###}DoorMarco.ImagePointX(&quot;Exit&quot;)</param>
                                                 </action>
                                             </actions>
-                                            <sub-events>
-                                                <event-block sid="5182519265945771">
-                                                    <conditions>
-                                                        <condition id="-7" name="Compare instance variable" sid="2773179802629365" type="SeeLine">
-                                                            <param id="0" name="Instance variable">idCreatureAssig</param>
-                                                            <param id="1" name="Comparison">0</param>
-                                                            <param id="2" name="Value">Creatures.UID</param>
-                                                        </condition>
-                                                    </conditions>
-                                                    <actions>
-                                                        <action id="-13" name="Set boolean" sid="5137555653425055" type="SeeLine">
-                                                            <param id="0" name="Instance variable">isEnable</param>
-                                                            <param id="1" name="Value">0</param>
-                                                        </action>
-                                                    </actions>
-                                                </event-block>
-                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -2654,6 +2825,23 @@
                                                     <param id="1" name="Parameter {n}">Creatures.UID{###}DoorMarco.ImagePointX(&quot;Enter&quot;)</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="5182519265945771">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="2773179802629365" type="SeeLine">
+                                                            <param id="0" name="Instance variable">idCreatureAssig</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">Creatures.UID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-13" name="Set boolean" sid="5137555653425055" type="SeeLine">
+                                                            <param id="0" name="Instance variable">isEnable</param>
+                                                            <param id="1" name="Value">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -3387,7 +3575,7 @@
                                                 <action behavior="Flash" id="0" name="Flash" sid="4575607153913285" type="EnvironmentObjects">
                                                     <param id="0" name="&apos;On&apos; time">0.5</param>
                                                     <param id="1" name="&apos;Off&apos; time">0.5</param>
-                                                    <param id="2" name="Duration">2</param>
+                                                    <param id="2" name="Duration">1</param>
                                                 </action>
                                             </actions>
                                         </event-block>
@@ -3446,14 +3634,6 @@
                                             <param id="0" name="Variable">PadlockOpenCount</param>
                                             <param id="1" name="Value">1</param>
                                         </action>
-                                        <action id="-10" name="Set value" sid="1006337656787056" type="HeroSprite">
-                                            <param id="0" name="Instance variable">action</param>
-                                            <param id="1" name="Value">&quot;none&quot;</param>
-                                        </action>
-                                        <action id="-10" name="Set value" sid="7967375271606157" type="HeroSprite">
-                                            <param id="0" name="Instance variable">state</param>
-                                            <param id="1" name="Value">&quot;Idle&quot;</param>
-                                        </action>
                                         <action id="0" name="Call function" sid="3827923500940255" type="Function">
                                             <param id="0" name="Name">&quot;ValideTotalPadlockOpens&quot;</param>
                                             <param id="1" name="Parameter {n}"></param>
@@ -3505,6 +3685,14 @@
                                         <condition id="-22" name="Else" sid="5220335477792579" type="System" />
                                     </conditions>
                                     <actions>
+                                        <action id="-10" name="Set value" sid="1006337656787056" type="HeroSprite">
+                                            <param id="0" name="Instance variable">action</param>
+                                            <param id="1" name="Value">&quot;none&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="7967375271606157" type="HeroSprite">
+                                            <param id="0" name="Instance variable">state</param>
+                                            <param id="1" name="Value">&quot;Idle&quot;</param>
+                                        </action>
                                         <action id="-9" name="Set value" sid="629437234780749" type="System">
                                             <param id="0" name="Variable">gameState</param>
                                             <param id="1" name="Value">&quot;WaitingForUser&quot;</param>
@@ -3782,6 +3970,64 @@
                                                     <param id="1" name="Value">&quot;WaitingForUser&quot;</param>
                                                 </action>
                                             </actions>
+                                            <sub-events>
+                                                <event-block sid="7384303843138122">
+                                                    <conditions>
+                                                        <condition id="-7" name="Compare instance variable" sid="9057711628787674" type="Book1">
+                                                            <param id="0" name="Instance variable">nameObject</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">EnvironmentObjects.nameObject</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Sine" id="0" name="Set active" sid="7258110159823636" type="Book1">
+                                                            <param id="0" name="State">0</param>
+                                                        </action>
+                                                        <action id="-7" name="Set size" sid="670786911751043" type="Book1">
+                                                            <param id="0" name="Width">Self.ImageWidth</param>
+                                                            <param id="1" name="Height">Self.ImageHeight</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="3381448958210663">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="5307249191967762" type="System" />
+                                                        <condition id="-7" name="Compare instance variable" sid="4936161063393685" type="Book2">
+                                                            <param id="0" name="Instance variable">nameObject</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">EnvironmentObjects.nameObject</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Sine" id="0" name="Set active" sid="1195981870202848" type="Book2">
+                                                            <param id="0" name="State">0</param>
+                                                        </action>
+                                                        <action id="-7" name="Set size" sid="2747141868284558" type="Book2">
+                                                            <param id="0" name="Width">Self.ImageWidth</param>
+                                                            <param id="1" name="Height">Self.ImageHeight</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="2154725169696038">
+                                                    <conditions>
+                                                        <condition id="-22" name="Else" sid="683795361860786" type="System" />
+                                                        <condition id="-7" name="Compare instance variable" sid="4389295594748152" type="Book3">
+                                                            <param id="0" name="Instance variable">nameObject</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Value">EnvironmentObjects.nameObject</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action behavior="Sine" id="0" name="Set active" sid="6491891885776215" type="Book3">
+                                                            <param id="0" name="State">0</param>
+                                                        </action>
+                                                        <action id="-7" name="Set size" sid="2991010488211289" type="Book3">
+                                                            <param id="0" name="Width">Self.ImageWidth</param>
+                                                            <param id="1" name="Height">Self.ImageHeight</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                            </sub-events>
                                         </event-block>
                                     </sub-events>
                                 </event-block>
@@ -3932,13 +4178,25 @@
                                     <param id="0" name="Instance variable">isEnable</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action behavior="Physics" id="27" name="Set enabled" sid="5207788985249186" type="Book2">
-                                    <param id="0" name="Mode">0</param>
-                                </action>
-                                <action behavior="Physics" id="27" name="Set enabled" sid="9744950686456073" type="platform">
-                                    <param id="0" name="Mode">0</param>
-                                </action>
                             </actions>
+                            <sub-events>
+                                <event-block sid="959214605580485">
+                                    <conditions>
+                                        <condition behavior="Physics" id="4" name="Is enabled" sid="9912889714011645" type="Book2" />
+                                    </conditions>
+                                    <actions>
+                                        <action behavior="Physics" id="27" name="Set enabled" sid="5207788985249186" type="Book2">
+                                            <param id="0" name="Mode">0</param>
+                                        </action>
+                                        <action behavior="Physics" id="27" name="Set enabled" sid="9744950686456073" type="platform">
+                                            <param id="0" name="Mode">0</param>
+                                        </action>
+                                        <action behavior="Sine" id="0" name="Set active" sid="3211206009313036" type="Book2">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
                         </event-block>
                         <event-block sid="8683567013746419">
                             <conditions />
@@ -4295,17 +4553,14 @@
                         <event-block sid="1993255611179405">
                             <conditions />
                             <actions>
-                                <action behavior="ScrollTo" id="1" name="Set enabled" sid="8203171796703777" type="HeroSprite">
-                                    <param id="0" name="State">0</param>
-                                </action>
-                                <action behavior="ScrollTo" id="1" name="Set enabled" sid="4427153734874707" type="Monster1">
-                                    <param id="0" name="State">1</param>
+                                <action id="-13" name="Set time scale" sid="4405806055426205" type="System">
+                                    <param id="0" name="Time scale">2.0</param>
                                 </action>
                             </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block disabled="1" sid="8534727003316409">
+                <event-block sid="8534727003316409">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="2608201223714587" type="Keyboard">
                             <param id="0" name="Key">70 (F)</param>
@@ -4313,16 +4568,63 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block disabled="1" sid="5059584315419246">
+                        <event-block sid="2848797708888287">
                             <conditions />
                             <actions>
-                                <action id="-10" name="Set value" sid="9328566349948677" type="Monster1">
-                                    <param id="0" name="Instance variable">action</param>
-                                    <param id="1" name="Value">&quot;FindingHero&quot;</param>
+                                <action behavior="ScrollTo" id="1" name="Set enabled" sid="6508197062178435" type="HeroSprite">
+                                    <param id="0" name="State">0</param>
                                 </action>
-                                <action id="0" name="Call function" sid="269523355403254" type="Function">
-                                    <param id="0" name="Name">&quot;RunMovement&quot;</param>
-                                    <param id="1" name="Parameter {n}">Monster1.UID{###}500</param>
+                                <action behavior="ScrollTo" id="1" name="Set enabled" sid="8569622951846432" type="Monster1">
+                                    <param id="0" name="State">1</param>
+                                </action>
+                                <action behavior="ScrollTo" id="0" name="Shake" sid="7859501470906114" type="Monster1">
+                                    <param id="0" name="Magnitude">20</param>
+                                    <param id="1" name="Duration">1</param>
+                                    <param id="2" name="Mode">0</param>
+                                </action>
+                                <action id="-8" name="Set angle" sid="1371381564783255" type="Book2">
+                                    <param id="0" name="Angle">-40</param>
+                                </action>
+                                <action behavior="Physics" id="27" name="Set enabled" sid="9021363448011823" type="Book2">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                                <action behavior="Physics" id="27" name="Set enabled" sid="8646478408498018" type="platform">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="8197722278589181" type="Monster1">
+                                    <param id="0" name="Instance variable">distanceMovePoint</param>
+                                    <param id="1" name="Value">0</param>
+                                </action>
+                                <action behavior="Platform" id="1" name="Set max speed" sid="8546670207593583" type="Monster1">
+                                    <param id="0" name="Max Speed">200</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="831760390139854" type="Monster1">
+                                    <param id="0" name="Instance variable">actionSecundary</param>
+                                    <param id="1" name="Value">&quot;GoFindingHero&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="5753523532201439" type="Monster1">
+                                    <param id="0" name="Instance variable">action</param>
+                                    <param id="1" name="Value">&quot;GoFindingHero&quot;</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="2767488214922846" type="Monster1">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Value">&quot;Fury&quot;</param>
+                                </action>
+                                <action id="4" name="Set animation" sid="7094758319605949" type="Monster1">
+                                    <param id="0" name="Animation">&quot;Fury&quot;</param>
+                                    <param id="1" name="From">1</param>
+                                </action>
+                                <action id="-10" name="Set value" sid="2438674198922394" type="Alert">
+                                    <param id="0" name="Instance variable">idDoorEnter</param>
+                                    <param id="1" name="Value">6</param>
+                                </action>
+                                <action id="-15" name="Set visible" sid="3942745579913494" type="Alert">
+                                    <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action behavior="Flash" id="0" name="Flash" sid="7451669065092402" type="Alert">
+                                    <param id="0" name="&apos;On&apos; time">0.1</param>
+                                    <param id="1" name="&apos;Off&apos; time">0.1</param>
+                                    <param id="2" name="Duration">3.0</param>
                                 </action>
                             </actions>
                         </event-block>

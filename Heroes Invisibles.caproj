@@ -20,6 +20,7 @@
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
     </used-plugins>
     <used-behaviors>
+        <behavior author="Scirra" id="Anchor" version="1">Anchor</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Flash" version="1">Flash</behavior>
         <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
@@ -82,6 +83,9 @@
                         <behavior-type name="Pin" sid="9231190607728783">
                             <behavior id="Pin" />
                         </behavior-type>
+                        <behavior-type name="Sine" sid="8401845205820025">
+                            <behavior id="Sin" />
+                        </behavior-type>
                     </behaviors>
                     <animation-folder>
                         <animation framecount="5" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="4044474420412863" speed="0">
@@ -143,6 +147,32 @@
                         </animation>
                     </animation-folder>
                 </object-type>
+                <object-type name="TrackBotton" sid="8613678704675933">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Anchor" sid="1808030785330729">
+                            <behavior id="Anchor" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4771663723161505" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
+                <object-type name="InstructionsBotton" sid="9259086569661358">
+                    <plugin id="Sprite" />
+                    <behaviors>
+                        <behavior-type name="Anchor" sid="2275225365902098">
+                            <behavior id="Anchor" />
+                        </behavior-type>
+                    </behaviors>
+                    <animation-folder>
+                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3427962158784865" speed="5">
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        </animation>
+                    </animation-folder>
+                </object-type>
             </object-folder>
             <object-folder name="LevelComponents">
                 <object-folder name="Interactives">
@@ -180,6 +210,11 @@
                     </object-type>
                     <object-type name="Book1" sid="5049535358340743">
                         <plugin id="Sprite" />
+                        <behaviors>
+                            <behavior-type name="Sine" sid="1716042629736567">
+                                <behavior id="Sin" />
+                            </behavior-type>
+                        </behaviors>
                         <animation-folder>
                             <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="7454227748481383" speed="5">
                                 <frame duration="1" hotspotX="0.511628" hotspotY="0.508772" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_libro_ciencia.png">
@@ -261,6 +296,11 @@
                     </object-type>
                     <object-type name="Book2" sid="8098519323408096">
                         <plugin id="Sprite" />
+                        <behaviors>
+                            <behavior-type name="Sine" sid="9077641827214535">
+                                <behavior id="Sin" />
+                            </behavior-type>
+                        </behaviors>
                         <animation-folder>
                             <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="624304200557564" speed="5">
                                 <frame duration="1" hotspotX="0.511628" hotspotY="0.508772" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_libro_math.png">
@@ -271,6 +311,11 @@
                     </object-type>
                     <object-type name="Book3" sid="702442530636297">
                         <plugin id="Sprite" />
+                        <behaviors>
+                            <behavior-type name="Sine" sid="5444622554232863">
+                                <behavior id="Sin" />
+                            </behavior-type>
+                        </behaviors>
                         <animation-folder>
                             <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="6802878706665157" speed="5">
                                 <frame duration="1" hotspotX="0.511628" hotspotY="0.508772" original-source="\\VBOXSVR\WorkingVb\006 PJ - HEROES INVISIBLES New\01 ARTE APROBADO\ESCENARIO\HI_libro_geofrafia.png">
@@ -1283,6 +1328,46 @@
                     </animation>
                 </animation-folder>
             </object-type>
+            <object-type name="Tracks" sid="9195278854098313">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="3144640891631765">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="9143807038065587" speed="0">
+                        <frame duration="0" hotspotX="0.494163" hotspotY="0.485207" original-source="\\VBOXSVR\WorkingVb\HI_instrucciones.png">
+                            <collision-poly>
+                                <point x="0.905317" y="0" />
+                                <point x="0.990921" y="0" />
+                                <point x="0.99157" y="0.139546" />
+                                <point x="0.905642" y="0.139546" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
+            <object-type name="Instructions" sid="9414691198776304">
+                <plugin id="Sprite" />
+                <behaviors>
+                    <behavior-type name="Anchor" sid="3816559276666995">
+                        <behavior id="Anchor" />
+                    </behavior-type>
+                </behaviors>
+                <animation-folder>
+                    <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="7730677709165399" speed="0">
+                        <frame duration="0" hotspotX="0.494828" hotspotY="0.486014" original-source="\\VBOXSVR\WorkingVb\HI_instrucciones.png">
+                            <collision-poly>
+                                <point x="0.897558" y="0" />
+                                <point x="1" y="0" />
+                                <point x="1" y="0.105892" />
+                                <point x="0.897883" y="0.105892" />
+                            </collision-poly>
+                        </frame>
+                    </animation>
+                </animation-folder>
+            </object-type>
         </object-folder>
         <object-folder name="Menu">
             <object-type name="BgMenu" sid="9360133745484569">
@@ -1459,6 +1544,15 @@
                     <behavior id="Fade" />
                 </behavior-type>
             </behaviors>
+        </family>
+        <family name="Buttons" plugin-id="Sprite" sid="9546640276473003">
+            <members>
+                <member>BubbleBg</member>
+                <member>Instructions</member>
+                <member>InstructionsBotton</member>
+                <member>TrackBotton</member>
+                <member>Tracks</member>
+            </members>
         </family>
     </families>
     <layout-folder>
