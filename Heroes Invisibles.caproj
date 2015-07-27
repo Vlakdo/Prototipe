@@ -155,8 +155,9 @@
                         </behavior-type>
                     </behaviors>
                     <animation-folder>
-                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4771663723161505" speed="5">
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="4771663723161505" speed="5">
                             <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\Ultimate\HI_boton_libro.png" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -169,7 +170,7 @@
                     </behaviors>
                     <animation-folder>
                         <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3427962158784865" speed="5">
-                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                            <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\Ultimate\HI_boton_info.png" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -1357,12 +1358,12 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="7730677709165399" speed="0">
-                        <frame duration="0" hotspotX="0.494828" hotspotY="0.486014" original-source="\\VBOXSVR\WorkingVb\HI_instrucciones.png">
+                        <frame duration="0" hotspotX="0.5" hotspotY="0.500971" original-source="\\VBOXSVR\WorkingVb\Instrucciones.png">
                             <collision-poly>
-                                <point x="0.897558" y="0" />
+                                <point x="0.911393" y="0" />
                                 <point x="1" y="0" />
-                                <point x="1" y="0.105892" />
-                                <point x="0.897883" y="0.105892" />
+                                <point x="1" y="0.135922" />
+                                <point x="0.911076" y="0.135437" />
                             </collision-poly>
                         </frame>
                     </animation>
@@ -1412,7 +1413,18 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2998755505246103" speed="5">
-                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="\\VBOXSVR\WorkingVb\Ultimate\HI_boton_play.png">
+                            <collision-poly>
+                                <point x="0.147826" y="0.165049" />
+                                <point x="0.5" y="0" />
+                                <point x="0.852174" y="0.165049" />
+                                <point x="0.995652" y="0.5" />
+                                <point x="0.869565" y="0.854369" />
+                                <point x="0.5" y="0.995146" />
+                                <point x="0.121739" y="0.864078" />
+                                <point x="0.00869565" y="0.5" />
+                            </collision-poly>
+                        </frame>
                     </animation>
                 </animation-folder>
             </object-type>
