@@ -1,0 +1,91 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Winner Event</name>
+    <events>
+        <event-block sid="7413669186577836">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6428095339903952" type="System" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="1949596224873474">
+                    <conditions />
+                    <actions>
+                        <action id="-28" name="Set canvas size" sid="2437599050621546" type="System">
+                            <param id="0" name="Width">1024</param>
+                            <param id="1" name="Height">768</param>
+                        </action>
+                        <action behavior="FadeOut" id="1" name="Start fade" sid="473617405927903" type="Fade" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="7033939981653426">
+            <conditions>
+                <condition behavior="FadeOut" id="0" name="On fade-out finished" sid="4847622259582122" type="Fade" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7855996274678708">
+                    <conditions />
+                    <actions>
+                        <action id="0" name="Call function" sid="8356837501552321" type="Function">
+                            <param id="0" name="Name">&quot;GoMenu&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="9690601431633641">
+            <conditions>
+                <condition behavior="FadeIn" id="1" name="On fade-in finished" sid="4282888659896365" type="Fade" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7070161675702831">
+                    <conditions />
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="5939756864189384" type="System">
+                            <param id="0" name="Layout">Menu</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="1998219574173247">
+            <conditions>
+                <condition id="0" name="On function" sid="6770183735852511" type="Function">
+                    <param id="0" name="Name">&quot;GoMenu&quot;</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="7885591101412521">
+                    <conditions />
+                    <actions>
+                        <action id="-16" name="Wait" sid="405268777460383" type="System">
+                            <param id="0" name="Seconds">5</param>
+                        </action>
+                        <action id="-3" name="Create object" sid="4996899771478109" type="System">
+                            <param id="0" name="Object to create">Fade</param>
+                            <param id="1" name="Layer">&quot;Fade&quot;</param>
+                            <param id="2" name="X">1800</param>
+                            <param id="3" name="Y">1350</param>
+                        </action>
+                        <action id="-7" name="Set size" sid="560659268139101" type="Fade">
+                            <param id="0" name="Width">1800</param>
+                            <param id="1" name="Height">1350</param>
+                        </action>
+                        <action behavior="FadeIn" id="0" name="Restart fade" sid="9942065452329932" type="Fade" />
+                        <action id="-3" name="Set position" sid="6868045161980256" type="Fade">
+                            <param id="0" name="X">0</param>
+                            <param id="1" name="Y">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

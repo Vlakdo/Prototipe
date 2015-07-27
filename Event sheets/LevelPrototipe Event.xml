@@ -3,6 +3,7 @@
     <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
     <name>LevelPrototipe Event</name>
     <events>
+        <variable constant="0" name="Goto" sid="9355234666429777" static="0" type="text">none</variable>
         <variable constant="0" name="PadlockOpenCount" sid="779184448876331" static="0" type="number">0</variable>
         <variable constant="0" name="gameState" sid="7716998056900676" static="0" type="text">none</variable>
         <event-group description="" sid="3025546299924314" title="Start Level">
@@ -27,6 +28,10 @@
                                 <action id="-9" name="Set value" sid="5204279298470974" type="System">
                                     <param id="0" name="Variable">PadlockOpenCount</param>
                                     <param id="1" name="Value">0</param>
+                                </action>
+                                <action id="-9" name="Set value" sid="5051979997407304" type="System">
+                                    <param id="0" name="Variable">Goto</param>
+                                    <param id="1" name="Value">&quot;none&quot;</param>
                                 </action>
                                 <action id="-10" name="Set value" sid="9042740118618861" type="BubbleBg">
                                     <param id="0" name="Instance variable">state</param>
@@ -252,6 +257,28 @@
                                             </conditions>
                                             <actions>
                                                 <action id="4" name="Set animation" sid="3265488804109285" type="Creatures">
+                                                    <param id="0" name="Animation">&quot;Fury&quot;</param>
+                                                    <param id="1" name="From">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
+                                    </sub-events>
+                                </event-block>
+                                <event-block sid="5816827171755889">
+                                    <conditions>
+                                        <condition id="-22" name="Else" sid="8482540523930123" type="System" />
+                                        <condition id="-7" name="Compare instance variable" sid="5231985935177411" type="Creatures">
+                                            <param id="0" name="Instance variable">state</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">&quot;Dead&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions />
+                                    <sub-events>
+                                        <event-block sid="6905391522210078">
+                                            <conditions />
+                                            <actions>
+                                                <action id="4" name="Set animation" sid="6657797930188139" type="Creatures">
                                                     <param id="0" name="Animation">&quot;Fury&quot;</param>
                                                     <param id="1" name="From">1</param>
                                                 </action>
@@ -1872,6 +1899,9 @@
                                                                 </condition>
                                                             </conditions>
                                                             <actions>
+                                                                <action behavior="Platform" id="1" name="Set max speed" sid="7112628333879452" type="Creatures">
+                                                                    <param id="0" name="Max Speed">100</param>
+                                                                </action>
                                                                 <action id="-10" name="Set value" sid="1179313975938528" type="Creatures">
                                                                     <param id="0" name="Instance variable">actionSecundary</param>
                                                                     <param id="1" name="Value">&quot;none&quot;</param>
@@ -2483,6 +2513,9 @@
                                             <param id="0" name="Instance variable">state</param>
                                             <param id="1" name="Value">&quot;SeeEnd&quot;</param>
                                         </action>
+                                        <action id="-15" name="Set visible" sid="2093718719091998" type="Alert">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
                                         <action id="-9" name="Set value" sid="4383648946158817" type="System">
                                             <param id="0" name="Variable">gameState</param>
                                             <param id="1" name="Value">&quot;GameOver&quot;</param>
@@ -2490,6 +2523,38 @@
                                     </actions>
                                 </event-block>
                             </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5034677794834887">
+                    <conditions>
+                        <condition behavior="Flash" id="1" name="On flash ended" sid="4020071934949775" type="HeroSprite" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1382459201703556">
+                            <conditions />
+                            <actions>
+                                <action id="-9" name="Set value" sid="9170771239958506" type="System">
+                                    <param id="0" name="Variable">Goto</param>
+                                    <param id="1" name="Value">&quot;LevelPrototipe&quot;</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="8846096692642009" type="System">
+                                    <param id="0" name="Object to create">Fade</param>
+                                    <param id="1" name="Layer">&quot;Interface&quot;</param>
+                                    <param id="2" name="X">1800</param>
+                                    <param id="3" name="Y">1350</param>
+                                </action>
+                                <action id="-7" name="Set size" sid="2256683324454165" type="Fade">
+                                    <param id="0" name="Width">1800</param>
+                                    <param id="1" name="Height">1350</param>
+                                </action>
+                                <action behavior="FadeIn" id="0" name="Restart fade" sid="3816737177700305" type="Fade" />
+                                <action id="-3" name="Set position" sid="1764241391076244" type="Fade">
+                                    <param id="0" name="X">0</param>
+                                    <param id="1" name="Y">0</param>
+                                </action>
+                            </actions>
                         </event-block>
                     </sub-events>
                 </event-block>
@@ -3263,19 +3328,30 @@
                                     </conditions>
                                     <actions>
                                         <action id="-26" name="Move to layer" sid="6382363582174537" type="EnvironmentObjects">
-                                            <param id="0" name="Layer">&quot;FrontComponentsLevel&quot;</param>
+                                            <param id="0" name="Layer">&quot;CenterComponentsLevel&quot;</param>
                                         </action>
                                         <action id="-3" name="Set position" sid="439046224062115" type="EnvironmentObjects">
                                             <param id="0" name="X">Function.Param(2)</param>
                                             <param id="1" name="Y">Function.Param(3)</param>
                                         </action>
-                                        <action behavior="FadeIn" id="0" name="Restart fade" sid="1891076688066453" type="Ling" />
-                                        <action id="-3" name="Set position" sid="8692491860611263" type="Ling">
-                                            <param id="0" name="X">EnvironmentObjects.X</param>
-                                            <param id="1" name="Y">EnvironmentObjects.Y</param>
-                                        </action>
                                     </actions>
                                     <sub-events>
+                                        <event-block sid="7372733679857456">
+                                            <conditions>
+                                                <condition id="-7" name="Compare instance variable" sid="588010192081386" type="LingEnd">
+                                                    <param id="0" name="Instance variable">nameObjectRequires</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Value">EnvironmentObjects.nameObject</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-3" name="Set position" sid="8692491860611263" type="LingEnd">
+                                                    <param id="0" name="X">EnvironmentObjects.X</param>
+                                                    <param id="1" name="Y">EnvironmentObjects.Y</param>
+                                                </action>
+                                                <action behavior="FadeIn" id="0" name="Restart fade" sid="1891076688066453" type="LingEnd" />
+                                            </actions>
+                                        </event-block>
                                         <event-block sid="7473361503975016">
                                             <conditions>
                                                 <condition id="-7" name="Compare instance variable" sid="6450927530404112" type="captureItemPoint">
@@ -3366,11 +3442,6 @@
                                         </condition>
                                     </conditions>
                                     <actions>
-                                        <action id="-3" name="Set position" sid="515540254596781" type="Ling">
-                                            <param id="0" name="X">0</param>
-                                            <param id="1" name="Y">-500</param>
-                                        </action>
-                                        <action id="-9" name="Destroy" sid="302546536333316" type="EnvironmentObjects" />
                                         <action id="-10" name="Add to" sid="7589651498665811" type="System">
                                             <param id="0" name="Variable">PadlockOpenCount</param>
                                             <param id="1" name="Value">1</param>
@@ -3457,11 +3528,166 @@
                                             <param id="0" name="Variable">gameState</param>
                                             <param id="1" name="Value">&quot;WINNER&quot;</param>
                                         </action>
-                                        <action id="0" name="Set text" sid="3111074542252676" type="Debug">
-                                            <param id="0" name="Text">&quot;WINNNNNNNNERRR!!!&quot;</param>
+                                        <action id="-10" name="Set value" sid="7429129748836511" type="HeroSprite">
+                                            <param id="0" name="Instance variable">state</param>
+                                            <param id="1" name="Value">&quot;Winner!!&quot;</param>
                                         </action>
-                                        <action id="-13" name="Set time scale" sid="5552187746894952" type="System">
-                                            <param id="0" name="Time scale">0</param>
+                                        <action id="-10" name="Set value" sid="2718890894112098" type="HeroSprite">
+                                            <param id="0" name="Instance variable">action</param>
+                                            <param id="1" name="Value">&quot;Winner!!&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="3820279536101505" type="HeroSprite">
+                                            <param id="0" name="Instance variable">actionSecundary</param>
+                                            <param id="1" name="Value">&quot;Winner!!&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="4782768211375821" type="HeroSprite">
+                                            <param id="0" name="Instance variable">distanceMovePoint</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="1924982603638473" type="Monster1">
+                                            <param id="0" name="Instance variable">action</param>
+                                            <param id="1" name="Value">&quot;Dead&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="8436691653767709" type="Monster1">
+                                            <param id="0" name="Instance variable">actionSecundary</param>
+                                            <param id="1" name="Value">&quot;Dead&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="873140578896407" type="Monster1">
+                                            <param id="0" name="Instance variable">state</param>
+                                            <param id="1" name="Value">&quot;Dead&quot;</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="6591737146577353" type="Monster1">
+                                            <param id="0" name="Instance variable">distanceMovePoint</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action behavior="Platform" id="11" name="Set enabled" sid="3114269456831211" type="HeroSprite">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action behavior="Platform" id="11" name="Set enabled" sid="7665121187487846" type="Monster1">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="6306738257797571" type="HeroSprite">
+                                            <param id="0" name="State">0</param>
+                                        </action>
+                                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="5502658206801498" type="Monster1">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="-15" name="Set visible" sid="399872421092654" type="Alert">
+                                            <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="4" name="Set animation" sid="2451479396058711" type="Monster1">
+                                            <param id="0" name="Animation">&quot;Fury&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                        <action behavior="ScrollTo" id="0" name="Shake" sid="847799725653746" type="Monster1">
+                                            <param id="0" name="Magnitude">20</param>
+                                            <param id="1" name="Duration">1</param>
+                                            <param id="2" name="Mode">0</param>
+                                        </action>
+                                        <action behavior="Fade" id="0" name="Restart fade" sid="2257197914924767" type="Monster1" />
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="3238825415876556">
+                            <conditions>
+                                <condition behavior="Fade" id="0" name="On fade-out finished" sid="668032192996444" type="Monster1" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="3063085929187712">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-15" name="Set visible" sid="8921031239097471" type="Alert">
+                                            <param id="0" name="Visibility">0</param>
+                                        </action>
+                                        <action behavior="ScrollTo" id="1" name="Set enabled" sid="6768068390590991" type="HeroSprite">
+                                            <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="-9" name="Set value" sid="9081647538829257" type="System">
+                                            <param id="0" name="Variable">Goto</param>
+                                            <param id="1" name="Value">&quot;Winner&quot;</param>
+                                        </action>
+                                        <action id="-3" name="Create object" sid="5300114641803216" type="System">
+                                            <param id="0" name="Object to create">Fade</param>
+                                            <param id="1" name="Layer">&quot;Interface&quot;</param>
+                                            <param id="2" name="X">1800</param>
+                                            <param id="3" name="Y">1350</param>
+                                        </action>
+                                        <action id="-7" name="Set size" sid="551451278647765" type="Fade">
+                                            <param id="0" name="Width">1800</param>
+                                            <param id="1" name="Height">1350</param>
+                                        </action>
+                                        <action behavior="FadeIn" id="0" name="Restart fade" sid="7035426286247388" type="Fade" />
+                                        <action id="-3" name="Set position" sid="7566369922404438" type="Fade">
+                                            <param id="0" name="X">0</param>
+                                            <param id="1" name="Y">0</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="5552648616111776">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6446940036278486" type="Monster1">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Dead&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="3699120366822331">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="4262298516516199" type="Monster1">
+                                            <param id="0" name="Animation">&quot;Fury&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="3915109317859723" type="Monster1">
+                                            <param id="0" name="Animation">&quot;Fury&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="3083417431512472">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="993982945072435" type="HeroSprite">
+                                    <param id="0" name="Instance variable">state</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">&quot;Winner!!&quot;</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="3159684495057866">
+                                    <conditions>
+                                        <condition id="2" inverted="1" name="Is playing" sid="8739913705193532" type="HeroSprite">
+                                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="4" name="Set animation" sid="6872483712780703" type="HeroSprite">
+                                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                                            <param id="1" name="From">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="4478977790777144">
+                            <conditions>
+                                <condition behavior="FadeIn" id="1" name="On fade-in finished" sid="6980732307435439" type="Fade" />
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="3532354099667862">
+                                    <conditions />
+                                    <actions>
+                                        <action id="-25" name="Go to layout (by name)" sid="1707723959079993" type="System">
+                                            <param id="0" name="Layout">Goto</param>
                                         </action>
                                     </actions>
                                 </event-block>
@@ -3594,6 +3820,13 @@
                                         </action>
                                         <action behavior="ScrollTo" id="1" name="Set enabled" sid="8441493406101019" type="Monster1">
                                             <param id="0" name="State">1</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="2545228408805566" type="Monster1">
+                                            <param id="0" name="Instance variable">distanceMovePoint</param>
+                                            <param id="1" name="Value">0</param>
+                                        </action>
+                                        <action behavior="Platform" id="1" name="Set max speed" sid="3388849670205051" type="Monster1">
+                                            <param id="0" name="Max Speed">200</param>
                                         </action>
                                         <action id="-10" name="Set value" sid="7891940423800902" type="Alert">
                                             <param id="0" name="Instance variable">idDoorEnter</param>
@@ -3739,7 +3972,7 @@
                                 </action>
                                 <action id="0" name="Call function" sid="6716364773354173" type="Function">
                                     <param id="0" name="Name">&quot;RunMovement&quot;</param>
-                                    <param id="1" name="Parameter {n}">Monster1.UID{###}590</param>
+                                    <param id="1" name="Parameter {n}">Monster1.UID{###}500</param>
                                 </action>
                             </actions>
                         </event-block>
@@ -4019,9 +4252,9 @@
                 </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" disabled="1" sid="7764743276732633" title="Temporal code">
+        <event-group description="" sid="7764743276732633" title="Temporal code">
             <sub-events>
-                <event-block disabled="1" sid="6230948287471291">
+                <event-block sid="6230948287471291">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="3874242033155973" type="Keyboard">
                             <param id="0" name="Key">68 (D)</param>
@@ -4029,7 +4262,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block disabled="1" sid="9612212706036656">
+                        <event-block sid="9612212706036656">
                             <conditions>
                                 <condition id="-9" inverted="1" name="Is visible" sid="9693368286482152" type="SeeLine" />
                             </conditions>
@@ -4039,7 +4272,7 @@
                                 </action>
                             </actions>
                         </event-block>
-                        <event-block disabled="1" sid="7353015144441096">
+                        <event-block sid="7353015144441096">
                             <conditions>
                                 <condition id="-22" name="Else" sid="847274510069704" type="System" />
                             </conditions>
@@ -4051,7 +4284,7 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block disabled="1" sid="5101629962613364">
+                <event-block sid="5101629962613364">
                     <conditions>
                         <condition id="0" name="On key pressed" sid="1389295235322991" type="Keyboard">
                             <param id="0" name="Key">67 (C)</param>
@@ -4059,7 +4292,7 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block disabled="1" sid="1993255611179405">
+                        <event-block sid="1993255611179405">
                             <conditions />
                             <actions>
                                 <action behavior="ScrollTo" id="1" name="Set enabled" sid="8203171796703777" type="HeroSprite">
@@ -4080,13 +4313,16 @@
                     </conditions>
                     <actions />
                     <sub-events>
-                        <event-block disabled="1" sid="962111129727147">
+                        <event-block disabled="1" sid="5059584315419246">
                             <conditions />
                             <actions>
-                                <action id="-33" name="Set layer parallax" sid="3169561517179541" type="System">
-                                    <param id="0" name="Layer">&quot;HUD&quot;</param>
-                                    <param id="1" name="Parallax X">0</param>
-                                    <param id="2" name="Parallax Y">0</param>
+                                <action id="-10" name="Set value" sid="9328566349948677" type="Monster1">
+                                    <param id="0" name="Instance variable">action</param>
+                                    <param id="1" name="Value">&quot;FindingHero&quot;</param>
+                                </action>
+                                <action id="0" name="Call function" sid="269523355403254" type="Function">
+                                    <param id="0" name="Name">&quot;RunMovement&quot;</param>
+                                    <param id="1" name="Parameter {n}">Monster1.UID{###}500</param>
                                 </action>
                             </actions>
                         </event-block>
