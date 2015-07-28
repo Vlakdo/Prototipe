@@ -3148,7 +3148,7 @@
                     <properties>
                         <initial-visibility>Visible</initial-visibility>
                         <initial-animation>Default</initial-animation>
-                        <initial-frame>1</initial-frame>
+                        <initial-frame>0</initial-frame>
                         <collisions>Enabled</collisions>
                     </properties>
                     <behavior-instances>
@@ -3165,8 +3165,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>749</x>
-                        <y>42</y>
+                        <x>54</x>
+                        <y>40</y>
                         <z>0</z>
                         <width>90</width>
                         <height>66</height>
@@ -3198,8 +3198,8 @@
                     <blend-mode>0</blend-mode>
                     <effect-fallback>0</effect-fallback>
                     <world>
-                        <x>43</x>
-                        <y>40</y>
+                        <x>763</x>
+                        <y>37</y>
                         <z>0</z>
                         <width>60</width>
                         <height>60</height>
