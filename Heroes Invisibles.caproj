@@ -11,6 +11,7 @@
     <saved-with-version>20600</saved-with-version>
     <used-plugins>
         <plugin author="Scirra" id="Arr" version="1">Array</plugin>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
@@ -142,8 +143,9 @@
                         </behavior-type>
                     </behaviors>
                     <animation-folder>
-                        <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="3445061108260958" speed="5">
-                            <frame duration="1" hotspotX="0.696429" hotspotY="0.517544" />
+                        <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="3445061108260958" speed="0">
+                            <frame duration="0" hotspotX="0.338889" hotspotY="-0.275229" original-source="\\VBOXSVR\WorkingVb\Premo\Heroes Invisibles - Crea 2015 Prototipo\Assets\AnalfaBETO.png" />
+                            <frame duration="0" hotspotX="0.5" hotspotY="0.5" />
                         </animation>
                     </animation-folder>
                 </object-type>
@@ -1409,6 +1411,9 @@
                     <behavior-type name="Fade" sid="5339738762959606">
                         <behavior id="Fade" />
                     </behavior-type>
+                    <behavior-type name="Sine" sid="7707273004306148">
+                        <behavior id="Sin" />
+                    </behavior-type>
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="2998755505246103" speed="5">
@@ -1471,6 +1476,9 @@
             </object-type>
             <object-type name="Mouse" sid="9154534125933609">
                 <plugin id="Mouse" />
+            </object-type>
+            <object-type name="Audio" sid="3762299376488502">
+                <plugin id="Audio" />
             </object-type>
         </object-folder>
         <object-folder name="Winner">
@@ -1585,9 +1593,26 @@
         </global-instance>
         <global-instance type="Keyboard" uid="29" />
         <global-instance type="Mouse" uid="96" />
+        <global-instance type="Audio" uid="112">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder />
-    <music-folder />
+    <music-folder>
+        <file name="Butterfly Town.m4a" />
+        <file name="Butterfly Town.ogg" />
+    </music-folder>
     <files-folder>
         <file-folder name="Icons">
             <file name="icon-16.png" />

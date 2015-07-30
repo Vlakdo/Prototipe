@@ -18,6 +18,12 @@
                         <event-block sid="9432375755205286">
                             <conditions />
                             <actions>
+                                <action id="0" name="Play" sid="43714553041053" type="Audio">
+                                    <param id="0" name="Audio file">Butterfly Town</param>
+                                    <param id="2" name="Loop">1</param>
+                                    <param id="3" name="Volume">0</param>
+                                    <param id="1" name="Tag (optional)">&quot;music&quot;</param>
+                                </action>
                                 <action id="-28" name="Set canvas size" sid="9548024283667574" type="System">
                                     <param id="0" name="Width">800</param>
                                     <param id="1" name="Height">600</param>
@@ -77,7 +83,7 @@
                                     <param id="0" name="Instance variable">isEnable</param>
                                     <param id="1" name="Value">1</param>
                                 </action>
-                                <action id="-15" name="Set visible" sid="8109179752130326" type="Alert">
+                                <action disabled="1" id="-15" name="Set visible" sid="8109179752130326" type="Alert">
                                     <param id="0" name="Visibility">0</param>
                                 </action>
                                 <action behavior="Pin" id="0" name="Pin to object" sid="7970093209101288" type="Alert">
@@ -2216,6 +2222,20 @@
                                                 </event-block>
                                             </sub-events>
                                         </event-block>
+                                        <event-block sid="4899360759707816">
+                                            <conditions>
+                                                <condition id="-8" name="Compare two values" sid="6939510927322571" type="System">
+                                                    <param id="0" name="First value">Monster1.UID</param>
+                                                    <param id="1" name="Comparison">0</param>
+                                                    <param id="2" name="Second value">Creatures.UID</param>
+                                                </condition>
+                                            </conditions>
+                                            <actions>
+                                                <action id="-15" name="Set visible" sid="9086548389314316" type="Alert">
+                                                    <param id="0" name="Visibility">1</param>
+                                                </action>
+                                            </actions>
+                                        </event-block>
                                     </sub-events>
                                 </event-block>
                                 <comment>Use Hide:</comment>
@@ -2701,8 +2721,11 @@
                                             <param id="0" name="Instance variable">state</param>
                                             <param id="1" name="Value">&quot;SeeEnd&quot;</param>
                                         </action>
-                                        <action id="-15" name="Set visible" sid="2093718719091998" type="Alert">
+                                        <action disabled="1" id="-15" name="Set visible" sid="2093718719091998" type="Alert">
                                             <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="8759128382495412" type="Alert">
+                                            <param id="0" name="Frame number">1</param>
                                         </action>
                                         <action id="-9" name="Set value" sid="4383648946158817" type="System">
                                             <param id="0" name="Variable">gameState</param>
@@ -2838,6 +2861,20 @@
                                                         <action id="-13" name="Set boolean" sid="5137555653425055" type="SeeLine">
                                                             <param id="0" name="Instance variable">isEnable</param>
                                                             <param id="1" name="Value">0</param>
+                                                        </action>
+                                                    </actions>
+                                                </event-block>
+                                                <event-block sid="4020266880533581">
+                                                    <conditions>
+                                                        <condition id="-8" name="Compare two values" sid="3867816529768106" type="System">
+                                                            <param id="0" name="First value">Monster1.UID</param>
+                                                            <param id="1" name="Comparison">0</param>
+                                                            <param id="2" name="Second value">Creatures.UID</param>
+                                                        </condition>
+                                                    </conditions>
+                                                    <actions>
+                                                        <action id="-15" name="Set visible" sid="7203416505801699" type="Alert">
+                                                            <param id="0" name="Visibility">0</param>
                                                         </action>
                                                     </actions>
                                                 </event-block>
@@ -3760,8 +3797,11 @@
                                         <action behavior="ScrollTo" id="1" name="Set enabled" sid="5502658206801498" type="Monster1">
                                             <param id="0" name="State">1</param>
                                         </action>
-                                        <action id="-15" name="Set visible" sid="399872421092654" type="Alert">
+                                        <action disabled="1" id="-15" name="Set visible" sid="399872421092654" type="Alert">
                                             <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="1155490530730075" type="Alert">
+                                            <param id="0" name="Frame number">1</param>
                                         </action>
                                         <action id="4" name="Set animation" sid="2451479396058711" type="Monster1">
                                             <param id="0" name="Animation">&quot;Fury&quot;</param>
@@ -4078,8 +4118,11 @@
                                             <param id="0" name="Instance variable">idDoorEnter</param>
                                             <param id="1" name="Value">6</param>
                                         </action>
-                                        <action id="-15" name="Set visible" sid="6324345005014709" type="Alert">
+                                        <action disabled="1" id="-15" name="Set visible" sid="6324345005014709" type="Alert">
                                             <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="6942343433354611" type="Alert">
+                                            <param id="0" name="Frame number">1</param>
                                         </action>
                                         <action behavior="Flash" id="0" name="Flash" sid="5129155394273659" type="Alert">
                                             <param id="0" name="&apos;On&apos; time">0.1</param>
@@ -4134,8 +4177,11 @@
                                             <param id="0" name="Instance variable">idDoorEnter</param>
                                             <param id="1" name="Value">13</param>
                                         </action>
-                                        <action id="-15" name="Set visible" sid="9539697693242155" type="Alert">
+                                        <action disabled="1" id="-15" name="Set visible" sid="9539697693242155" type="Alert">
                                             <param id="0" name="Visibility">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="3911247890474646" type="Alert">
+                                            <param id="0" name="Frame number">1</param>
                                         </action>
                                         <action behavior="Flash" id="0" name="Flash" sid="1696133080499341" type="Alert">
                                             <param id="0" name="&apos;On&apos; time">0.1</param>
@@ -4201,8 +4247,11 @@
                         <event-block sid="8683567013746419">
                             <conditions />
                             <actions>
-                                <action id="-15" name="Set visible" sid="9889709265472439" type="Alert">
+                                <action disabled="1" id="-15" name="Set visible" sid="9889709265472439" type="Alert">
                                     <param id="0" name="Visibility">0</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="1226043288663498" type="Alert">
+                                    <param id="0" name="Frame number">0</param>
                                 </action>
                                 <action id="0" name="Call function" sid="1822418174975979" type="Function">
                                     <param id="0" name="Name">&quot;RunActionObject&quot;</param>
@@ -4294,8 +4343,11 @@
                                     <param id="0" name="Instance variable">idDoorEnter</param>
                                     <param id="1" name="Value">6</param>
                                 </action>
-                                <action id="-15" name="Set visible" sid="8574374751484298" type="Alert">
+                                <action disabled="1" id="-15" name="Set visible" sid="8574374751484298" type="Alert">
                                     <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="9931813495335326" type="Alert">
+                                    <param id="0" name="Frame number">1</param>
                                 </action>
                                 <action behavior="Flash" id="0" name="Flash" sid="9591784846954908" type="Alert">
                                     <param id="0" name="&apos;On&apos; time">0.1</param>
@@ -4395,8 +4447,11 @@
                                     <param id="0" name="Instance variable">idDoorEnter</param>
                                     <param id="1" name="Value">14</param>
                                 </action>
-                                <action id="-15" name="Set visible" sid="9445586700675258" type="Alert">
+                                <action disabled="1" id="-15" name="Set visible" sid="9445586700675258" type="Alert">
                                     <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="1153854194138883" type="Alert">
+                                    <param id="0" name="Frame number">1</param>
                                 </action>
                                 <action behavior="Flash" id="0" name="Flash" sid="1450635183481558" type="Alert">
                                     <param id="0" name="&apos;On&apos; time">0.1</param>
@@ -4496,8 +4551,11 @@
                                     <param id="0" name="Instance variable">idDoorEnter</param>
                                     <param id="1" name="Value">6</param>
                                 </action>
-                                <action id="-15" name="Set visible" sid="7377235926303944" type="Alert">
+                                <action disabled="1" id="-15" name="Set visible" sid="7377235926303944" type="Alert">
                                     <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="8206232485207358" type="Alert">
+                                    <param id="0" name="Frame number">1</param>
                                 </action>
                                 <action behavior="Flash" id="0" name="Flash" sid="9607366325491486" type="Alert">
                                     <param id="0" name="&apos;On&apos; time">0.1</param>
@@ -4618,8 +4676,11 @@
                                     <param id="0" name="Instance variable">idDoorEnter</param>
                                     <param id="1" name="Value">6</param>
                                 </action>
-                                <action id="-15" name="Set visible" sid="3942745579913494" type="Alert">
+                                <action disabled="1" id="-15" name="Set visible" sid="3942745579913494" type="Alert">
                                     <param id="0" name="Visibility">1</param>
+                                </action>
+                                <action id="5" name="Set frame" sid="6441104175529278" type="Alert">
+                                    <param id="0" name="Frame number">1</param>
                                 </action>
                                 <action behavior="Flash" id="0" name="Flash" sid="7451669065092402" type="Alert">
                                     <param id="0" name="&apos;On&apos; time">0.1</param>
