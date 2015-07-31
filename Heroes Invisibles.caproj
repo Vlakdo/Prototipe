@@ -1359,7 +1359,7 @@
                 </behaviors>
                 <animation-folder>
                     <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="7730677709165399" speed="0">
-                        <frame duration="0" hotspotX="0.5" hotspotY="0.500971" original-source="\\VBOXSVR\WorkingVb\Instrucciones.png">
+                        <frame duration="1" hotspotX="0.5" hotspotY="0.500971" original-source="\\VBOXSVR\WorkingVb\Instrucciones.png">
                             <collision-poly>
                                 <point x="0.911393" y="0" />
                                 <point x="1" y="0" />
